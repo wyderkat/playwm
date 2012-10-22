@@ -41,6 +41,7 @@ strut_policy = follow_size
 launcher_icon_theme = Faience
 launcher_padding = 5 0 5
 launcher_item_app = /usr/share/applications/gnome-terminal.desktop
+launcher_item_app = /usr/share/applications/Thunar.desktop
 launcher_item_app = /usr/share/applications/firefox.desktop
 launcher_item_app = /usr/share/applications/evolution.desktop
 launcher_item_app = /usr/share/applications/teamviewer-teamviewer7.desktop

@@ -1,0 +1,8 @@
+----
+ - Copyright 2012 Tomasz Wyderka <wyderkat@cofoh.com>
+ -  www.cofoh.com
+ - Licensed under GPL-2
+ --
+
+Every file here is a link to proper configuration. 
+
