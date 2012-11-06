@@ -1,88 +1,221 @@
-# Background definitions
-# ID 1
-rounded = 7
+# MUST TO READ - HEADER
+#
+# This is configuration of top panel in PlayWM. As you can see comments are
+# begining with # sign. Be carefull, only # signs in 1st column mean comment!
+#
+# Table of Contents:
+#   1) BACKGROUNDS TEMPLATES
+#     This part of file contains templates of shapes and colors
+#     which are used later.
+#   2) GENERAL (PANEL) CONFIGURATION
+#     These are general settings, like what and where should be shown 
+#   3) TASKBAR CONFIGURATION
+#     List of open applications (here called tasks) 
+#   4) TASKS CONFIGURATION
+#     Configuration of single task
+#   5) 
+#
+# END OF HEADER
+
+
+# 1) BACKGROUNDS TEMPLATES
+#
+# Here you can create templates of shapes and color to apply on other elements
+#
+# Every background template consist of 4 lines.
+# Every background template has an implicit (!) ID,
+# which are numbers starting from 1. 
+# For convienience we are writing id numbers in comments.
+# Later you can use these numbers to refere some background template
+#
+
+# (id=1) panel_background_id (we will use id 1 in panel_background_id line) 
+rounded = 8
 border_width = 2
-background_color = #000000 60
+background_color = #000000 10
 border_color = #FFFFFF 16
 
-# ID 2
-rounded = 5
+# id=2 taskbar_background_id (inactive)
+rounded = 6
 border_width = 0
-background_color = #FFFFFF 40
+background_color = #000000 35
 border_color = #FFFFFF 48
 
-# ID 3
-rounded = 5
+# id=3 taskbar_active_background_id
+rounded = 6
+border_width = 1
+background_color = #000000 13
+border_color = #FFFFFF 38
+#
+# id=4 task_background_id (inactive)
+rounded = 2
+border_width = 1
+background_color = #000000 25
+border_color = #000000 40
+#
+# id=5 task_active_background_id
+rounded = 2
+border_width = 1
+background_color = #000000 25
+border_color = #FFFFFF 70
+#
+# id=6 task_urgent_background_id
+rounded = 2
+border_width = 1
+background_color = #FFFFFF 55
+border_color = #FFFFFF 70
+#
+# id=7 task_iconified_background_id
+rounded = 2
 border_width = 0
-background_color = #FFFFFF 16
-border_color = #FFFFFF 68
+background_color = #000000 45
+border_color = #000000 40
+#
+# id=8 clock_background_id
+rounded = 3
+border_width = 2
+background_color = #000000 35
+border_color = #FFFFFF 70
+# 
+# id=9 tooltip_background_id
+rounded = 3
+border_width = 2
+background_color = #FFFFFF 85
+border_color = #000000 30
 
-# Panel
-panel_monitor = all
+# 2) GENERAL (PANEL) CONFIGURATION
+
+# draw this panel on all monitors if have more than one
+panel_monitor = all 
+# position panel on the screen
+# 1st parameter is how to position vertically
+#   (bottom, top, center)
+# 2nd parameter is how to position horizontally
+#   (left, right, center)
+# 3rd parameter is how to rotate/orientate panel
+#   (horizontal, vertical)
+# Tricky: when we want horizontal panel, 1st parameter 
+# is more important to control than 2nd, and vice versa
 panel_position = top center horizontal
-panel_size = 94% 30
-panel_margin = 0 0
-panel_padding = 7 0 7
+# Size: width height
+# We can use number, which mean pixels, or numbers with percent sign, which mean percentage of screen dimension
+panel_size = 94% 30 
+# margins outsite panel size: horizontal_margin vertical_margion. horizontal_margin = 0 means all screen width
+panel_margin = 0 1
+# padding (margins inside panel size) : horizontal vertical vertical_spaciong_between_elements
+panel_padding = 10 1 5 
+# put panel in WM dock
 panel_dock = 0
+# TODO?
 wm_menu = 0
+# panel_layer = (bottom,normal,top) 
+# Place panel under,together,on top of other windows.
 panel_layer = top
+# Which background definition to use (goto section BACKGROUNDS TEMPLATES)
 panel_background_id = 1
+# Items on panel and order:
+#   L to show Launcher
+#   T to show Taskbar
+#   S to show Systray (also called notification area)
+#   B to show Battery status
+#   C to show Clock
 panel_items = TSC
-
-
-# Panel Autohide
-autohide = 0
-autohide_show_timeout = 0.3
-autohide_hide_timeout = 2
-autohide_height = 2
+# How maximized windows should look:
+#   follow_size - adjust size to show panel too, when panel autohided, window follow it (resize) 
+#   minimum - window always take space from panel
+#   none - 
 strut_policy = follow_size
+# Panel Autohide
+# Enabled? 
+autohide = 0
+# Time to activate unhide
+autohide_show_timeout = 0.3
+# Time to autohide
+autohide_hide_timeout = 2
+# Height of taskbar when autohided
+autohide_height = 4
 
 
-launcher_icon_theme = Faience
-launcher_padding = 5 0 5
-launcher_item_app = /usr/share/applications/gnome-terminal.desktop
-launcher_item_app = /usr/share/applications/firefox.desktop
-launcher_item_app = /usr/share/applications/evolution.desktop
-launcher_item_app = /usr/share/applications/teamviewer-teamviewer7.desktop
+# 3) TASKBAR CONFIGURATION
+# Taskbar is sometimes called Pager
 
-
-# Taskbar
+# Mode:
+# multi_desktop - show all desktops with all windows
+# single_desktop - show current desktop windows
 taskbar_mode = multi_desktop
-#taskbar_mode = single_desktop
-taskbar_padding = 10 3 2
-taskbar_background_id = 0
-taskbar_active_background_id = 0
-taskbar_name = 1
-taskbar_name_font_color = 100
-taskbar_name_padding = 10
+# Padding inside desktop
+# horizontal_padding vertical_padding horizontal_spacing
+taskbar_padding = 6 2 2
+# Which background definition to use (goto section BACKGROUNDS TEMPLATES)
+taskbar_background_id = 2
+# Like above but for current desktop
+taskbar_active_background_id = 3
+# show desktop names
+taskbar_name = 0
+# left_right_padding 
+taskbar_name_padding = 4
+# 
+taskbar_name_background_id = 0
+#
+taskbar_name_active_background_id = 0
+#
+taskbar_name_font = sans 7
+taskbar_name_font_color = #000000 50
+taskbar_name_active_font_color = #FFFFFF 100
 
 
-# Tasks
-urgent_nb_of_blink = 8
+# 4) TASKS CONFIGURATION
+# how many time to blink when some window want to get attention
+urgent_nb_of_blink = 7
+# display task icon
 task_icon = 1
+# display task text
 task_text = 1
-task_centered = 1
-task_maximum_size = 80 35
-task_padding = 6 2
-task_background_id = 3
-task_active_background_id = 2
-task_urgent_background_id = 2
-task_iconified_background_id = 3
-task_tooltip = 1
-
-# Task Icons
-task_icon_asb = 70 0 0
-task_active_icon_asb = 100 0 0
-task_urgent_icon_asb = 100 0 0
-task_iconified_icon_asb = 70 0 0
-
-# Fonts
-task_font = sans 7
-task_font_color = #FFFFFF 68
-task_active_font_color = #FFFFFF 83
+# task text centered ? 
+task_centered = 0
+# width heigh
+# width is used in horizontal panel
+# heigh in vertical
+# Value 0 meqans maximum
+task_maximum_size = 120 35
+# horizontal_padding vertical_padding
+task_padding = 4 1
+# Which background definition to use (goto section BACKGROUNDS TEMPLATES)
+task_background_id = 4
+# Like above but for current task/window
+task_active_background_id = 5
+# Like above but for windows which wants to get attention
+task_urgent_background_id = 6
+task_iconified_background_id = 7
+task_font = sans 8
+task_font_color = #FFFFFF 38
+task_active_font_color = #FFFFFF 63
 task_urgent_font_color = #FFFFFF 83
 task_iconified_font_color = #FFFFFF 68
+# font shadow ?
 font_shadow = 0
+
+
+# Task Icons ASB = Alpha Saturation brigthness
+# Alpha from 0 to 100, Saturation -100 up to 100, brigthness too
+task_icon_asb = 100 -100 -30
+task_active_icon_asb = 100 0 0
+task_urgent_icon_asb = 100 0 0
+task_iconified_icon_asb = 100 -100 -45
+
+# tooltips for tasks? 
+task_tooltip = 1
+# horizontal_padding vertical_padding
+tooltip_padding = 2 2
+# time to activate tooltip
+tooltip_show_timeout = 0.7
+# time to desactivate tooltip
+tooltip_hide_timeout = 0.3
+# NEXT
+tooltip_background_id = 9
+tooltip_font = sans 10
+tooltip_font_color = #000000 80
+
 
 # System Tray
 systray = 1
@@ -90,7 +223,7 @@ systray_padding = 0 4 5
 systray_sort = ascending
 systray_background_id = 0
 systray_icon_size = 16
-systray_icon_asb = 70 0 0
+systray_icon_asb = 100 -50 0
 
 # Clock
 time1_format = %H:%M
@@ -98,17 +231,9 @@ time1_font = sans 8
 time2_format = %A %d %B
 time2_font = sans 6
 clock_font_color = #FFFFFF 74
-clock_padding = 1 0
-clock_background_id = 0
+clock_padding = 5 4
+clock_background_id = 8
 clock_rclick_command = orage
-
-# Tooltips
-tooltip_padding = 2 2
-tooltip_show_timeout = 0.7
-tooltip_hide_timeout = 0.3
-tooltip_background_id = 1
-tooltip_font = sans 10
-tooltip_font_color = #000000 80
 
 # Mouse
 mouse_middle = none

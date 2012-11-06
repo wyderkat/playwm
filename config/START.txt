@@ -1,8 +1,63 @@
+Welcome everybody to PlayWM!
+
+PlayWM is a window manager which was intended to play with it's configuration.
+This way every curious user, not only advanced linux geeks, can change how looks
+and behave his/her desktop and windows on it. 
+
+How to play? After staring PlayWM first time, go to ~/.playwm directory and
+read START.txt file. Since you are reading it now, we can begin:)
+
+In ~/.playwm directory we can find all configuration files for different
+components of PlayWM. PlayWM is like LEGO toys. It is build from different
+application joined in one place, and well documented. 
+
+To play with PlayWM we need to change those files, using documentations provided
+in inside those files. It is possible because documentation is clear and written
+as a comments.
+
+To avoid reading all documentation read just header (marked as a 
+  MUST TO READ - HEADER
+) and follow instructions or table of contents provided there. 
+
+One file which we need to read from first line till the bottom is this file:
+->  START.txt
+OK, lets start by making necessary notes about architecture of PlayWM.
+
+Core of PlayWM is OpenBox window manager by Dana Jansens (and now also others).
+But what you will be probably looking at after starting PlayWM is the panel on
+the top of the screen. This is Tint2 application by Thierry Lorthiois and
+Andreas Fink. 
+
+If you want to change how looks and works this top panel go to 
+->  task.bar.tint2rc 
+file.
+
+The same Tint2 application runs on the right edge of screen. To configure go to
+->  launch.bar.tint2rc
+
+What about that core of PlayWM - OpenBox? Here are most of options to change. 
+If you want to change desktop wallpaper or add application to start when PlayWM
+starts go to:
+->  autostart.openbox.sh
+
+If you want to change keybindings, mousebindings or any advanced/internal
+part of window manager go to :
+->  windows.openbox.xml
+
+To change menu go to 
+->  menu.openbox.xml
+->  system-menu.openbox.xml
+
+After changing any configuration file, type make in a ~/.playwm directory to
+refresh/restart components.  Make also backup copy of files you are changing for
+own safety. 
+
+That's it. Have fun playing PlayWM.
+
+
+
 ----
  - Copyright 2012 Tomasz Wyderka <wyderkat@cofoh.com>
  -  www.cofoh.com
  - Licensed under GPL-2
  --
-
-Every file here is a link to proper configuration. 
-

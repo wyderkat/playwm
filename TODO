@@ -1,12 +1,25 @@
+TODEVELOP:
+- cliking animation
+
 icons - licence
 
 themes - licencje
 
 Login proccess:
   playwm.sh:
-    1. copy config
+    done 1. copy config
+    1a. update config
     2. turn on logs
-    3. exec openbox
+    done 3. exec openbox
 
 Pisac podziekowania dla autorow
+
+Uzaleznic ludzi od dobrej lektury konfiguracji. 
+
+Configuracja fontów - antyaliasing
+
+Quidelines for STORY:
+- concrete
+- TOC
+- abbreviations
 
