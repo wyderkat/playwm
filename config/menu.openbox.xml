@@ -12,20 +12,10 @@
   <item label="WWW">
     <action name="Execute"><execute>firefox</execute></action>
   </item>
-  <item label="Mail">
-    <action name="Execute"><execute>evolution</execute></action>
-  </item>
-  <item label="Calc">
-    <action name="Execute"><execute>xcalc</execute></action>
-  </item>
   <!-- This requires the presence of the 'menu' package to work -->
   <separator />
   <menu id="/Debian" />
-  <menu id="client-list-menu" />
   <separator />
-  <item label="ObConf">
-    <action name="Execute"><execute>obconf</execute></action>
-  </item>
   <item label="Reconfigure">
     <action name="Reconfigure" />
   </item>

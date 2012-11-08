@@ -1,6 +1,3 @@
-TODEVELOP:
-- cliking animation
-
 icons - licence
 
 themes - licencje
@@ -12,9 +9,6 @@ Login proccess:
     2. turn on logs
     done 3. exec openbox
 
-Pisac podziekowania dla autorow
-
-Uzaleznic ludzi od dobrej lektury konfiguracji. 
 
 Configuracja fontów - antyaliasing
 
@@ -22,4 +16,15 @@ Quidelines for STORY:
 - concrete
 - TOC
 - abbreviations
+Uzaleznic ludzi od dobrej lektury konfiguracji. 
+
+Auto $HOME for menu
+
+transparency for terminal
+
+
+DEB -> test @small
+
+TODEVELOP:
+- cliking animation
 

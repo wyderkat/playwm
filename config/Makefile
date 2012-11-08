@@ -6,7 +6,7 @@ reconf: .reconf_openbox_FLAG .reconf_tint2_FLAG
 	killall -USR1 tint2
 	touch $@
 
-.reconf_openbox_FLAG: windows.openbox.xml menu.openbox.xml system-menu.openbox.xml 
+.reconf_openbox_FLAG: windows.openbox.xml menu.openbox.xml 
 	killall -USR2 openbox
 	touch $@
 

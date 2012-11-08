@@ -19,6 +19,7 @@ mandir=$(sharedir)/man
 man1dir=$(mandir)/man1
 playwmlibdir=$(prefix)/lib/playwm
 playwmconflibdir=$(playwmlibdir)/config
+playwmimagelibdir=$(playwmlibdir)/image
 
 all: 
 
@@ -27,6 +28,7 @@ dist: $(TARBALL)
 install: 
 	install -D -m 0755 bin/playwm $(DESTDIR)$(bindir)/playwm
 	install -D -m 0644 image/logo64.png $(DESTDIR)$(pixmapsdir)/playwm.png
+	install -D -m 0644 image/wallpaper19201080.jpg $(DESTDIR)$(playwmimagelibdir)/wallpaper19201080.jpg
 	install -D -m 0644 xsession/playwm.desktop $(DESTDIR)$(xsessionsdir)/playwm.desktop
 	mkdir -p $(DESTDIR)$(playwmconflibdir)
 	install -D -m 0644 $(CONFIGS) $(DESTDIR)$(playwmconflibdir)

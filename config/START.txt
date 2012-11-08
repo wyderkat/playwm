@@ -46,7 +46,6 @@ part of window manager go to :
 
 To change menu go to 
 ->  menu.openbox.xml
-->  system-menu.openbox.xml
 
 After changing any configuration file, type make in a ~/.playwm directory to
 refresh/restart components.  Make also backup copy of files you are changing for

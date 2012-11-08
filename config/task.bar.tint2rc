@@ -1,26 +1,38 @@
 # MUST TO READ - HEADER
 #
-# This is configuration of top panel in PlayWM. As you can see comments are
-# begining with # sign. Be carefull, only # signs in 1st column mean comment!
+# This is configuration of top panel in PlayWM. Top panel is located on the top
+# edge of screen and it looks like taskbar in windows. But name 'taskbar' is
+# used in this configuration file for somthing else, so lets call it Top Panel.
+#
+# As you can see comments here begin with # sign. Be carefull, only # characters
+# in 1st column of line start comments!
 #
 # Table of Contents:
 #   1) BACKGROUNDS TEMPLATES
-#     This part of file contains templates of shapes and colors
-#     which are used later.
+#     Here we can find templates of shapes and colors which are used later for
+#     make beautiful look of panel
 #   2) GENERAL (PANEL) CONFIGURATION
 #     These are general settings, like what and where should be shown 
 #   3) TASKBAR CONFIGURATION
-#     List of open applications (here called tasks) 
+#     This is the widthest part of panel. it is a list of open applications 
+#     (called also tasks) 
 #   4) TASKS CONFIGURATION
-#     Configuration of single task
-#   5) 
+#     Configuration of single task (opened window/application) 
+#   5) SYSTEM TRAY CONFIGURATION
+#     System Tray is place where some application like skype, put their status
+#     icons. Here will be shown volume control. 
+#   6) CLOCK CONFIGURATION
+#     No comments here
+#   7) BATTERY CONFIGURATION
+#     No comments here
+#
 #
 # END OF HEADER
 
 
 # 1) BACKGROUNDS TEMPLATES
 #
-# Here you can create templates of shapes and color to apply on other elements
+# Here you can create templates of shapes and colors to apply on other elements
 #
 # Every background template consist of 4 lines.
 # Every background template has an implicit (!) ID,
@@ -30,9 +42,14 @@
 #
 
 # (id=1) panel_background_id (we will use id 1 in panel_background_id line) 
+# how many pixels use to round corner
 rounded = 8
+# how wide is border (0 means no border)
 border_width = 2
+# color in html format and transparency percent (100 means no transparent at
+# all, 0 means totally transparent) 
 background_color = #000000 10
+# color and transparency of border
 border_color = #FFFFFF 16
 
 # id=2 taskbar_background_id (inactive)
@@ -135,6 +152,12 @@ autohide_hide_timeout = 2
 # Height of taskbar when autohided
 autohide_height = 4
 
+# Mouse
+mouse_middle = none
+mouse_right = close
+mouse_scroll_up = toggle
+mouse_scroll_down = iconify
+
 
 # 3) TASKBAR CONFIGURATION
 # Taskbar is sometimes called Pager
@@ -217,7 +240,8 @@ tooltip_font = sans 10
 tooltip_font_color = #000000 80
 
 
-# System Tray
+#   5) SYSTEM TRAY CONFIGURATION
+
 systray = 1
 systray_padding = 0 4 5
 systray_sort = ascending
@@ -225,7 +249,8 @@ systray_background_id = 0
 systray_icon_size = 16
 systray_icon_asb = 100 -50 0
 
-# Clock
+#   6) CLOCK CONFIGURATION
+
 time1_format = %H:%M
 time1_font = sans 8
 time2_format = %A %d %B
@@ -235,13 +260,9 @@ clock_padding = 5 4
 clock_background_id = 8
 clock_rclick_command = orage
 
-# Mouse
-mouse_middle = none
-mouse_right = close
-mouse_scroll_up = toggle
-mouse_scroll_down = iconify
 
-# Battery
+#   7) BATTERY CONFIGURATION
+
 battery = 0
 battery_low_status = 10
 battery_low_cmd = notify-send "battery low"
@@ -252,4 +273,4 @@ battery_font_color = #FFFFFF 74
 battery_padding = 1 0
 battery_background_id = 0
 
-# End of config
+# THE END
