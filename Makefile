@@ -7,7 +7,10 @@
 VERSION=0.1
 TARBALL=playwm_$(VERSION).orig.tar.gz
 PACKAGEDIR=playwm-$(VERSION)
+IMAGE=$(wildcard image/*)
 CONFIGS=$(wildcard config/*)
+DEBIAN=$(wildcard debian/*)
+SRC=Makefile bin/playwm $(IMAGE) xsession/playwm.desktop $(CONFIGS) $(DEBIAN)
 
 prefix=/usr
 bindir=$(prefix)/bin
@@ -42,11 +45,8 @@ selfdevelop:
 	ln -sf $(addprefix $(CURDIR)/,$(CONFIGS)) $(DESTDIR)$(HOME)/.playwm
 
 $(TARBALL) : $(SRC)
-	@mkdir $(PACKAGEDIR)
-	@cp -r $(SRC) $(PACKAGEDIR)
-	@tar zcf $@ $(PACKAGEDIR)
+	@tar zcf $@ --transform 's%^%$(PACKAGEDIR)/%' $^
 	@tar tf $@
-	@rm -r $(PACKAGEDIR)
 
 
 dsc: $(TARBALL)
@@ -60,12 +60,10 @@ deb: $(TARBALL)
 	@rm -r $(PACKAGEDIR)
 
 dput:
-	dput ppa:wyderka-t/terminalforhuman terminalforhuman_*.changes
+	dput ppa:wyderka-t/playwm playwm_*.changes
 
 clean:
-	@rm -f waitforcharacter
-	@rm -f $(TARBALL) terminalforhuman.html
-	@rm -rf $(PACKAGEDIR) terminalforhuman_*.debian.tar.gz terminalforhuman_*.dsc terminalforhuman_*.build terminalforhuman_*.changes terminalforhuman_*.deb terminalforhuman_*ppa.upload
+	@rm -rf $(PACKAGEDIR) playwm_*.orig.tar.gz playwm_*.debian.tar.gz playwm_*.dsc playwm_*.build playwm_*.changes playwm_*.deb playwm_*ppa.upload
 	
 
 .PHONY: html dist dsc all build install clean

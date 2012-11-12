@@ -1,0 +1,14 @@
+Source: playwm
+Section: x11
+Priority: optional
+Maintainer: Tomasz Wyderka <wyderkat@cofoh.com>
+Build-Depends: debhelper (>= 8.0.0)
+Standards-Version: 3.9.3
+Homepage: http://www.cofoh.com/playwm/
+
+Package: playwm
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, feh, xcompmgr, tint2, volumeicon-alsa, openbox, faience-icon-theme
+Description: Window Manager for playing with it's configuration.
+ Transparent. 
+ Homepage: http://www.cofoh.com/playwm/

@@ -1,8 +1,16 @@
-icons - licence
+1. dynamic patching
+2. my patches
+3. sed $HOME
+4. launcher test missing icons
+5. debian-menu.xml
+6. urxvt
+transparency for terminal
 
-themes - licencje
+7. xpm 32x32
+   png 48x48
+8. Configuracja fontów - antyaliasing
 
-Login proccess:
+9.  Login proccess:
   playwm.sh:
     done 1. copy config
     1a. update config
@@ -10,21 +18,15 @@ Login proccess:
     done 3. exec openbox
 
 
-Configuracja fontów - antyaliasing
 
-Quidelines for STORY:
+QUIDELINES FOR STORY:
 - concrete
 - TOC
 - abbreviations
 Uzaleznic ludzi od dobrej lektury konfiguracji. 
 
-Auto $HOME for menu
-
-transparency for terminal
-
-
-DEB -> test @small
-
 TODEVELOP:
 - cliking animation
 
+sudo add-apt-repository ppa:tiheum/equinox
+sudo apt-get update && sudo apt-get install faience-icon-theme
