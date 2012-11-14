@@ -10,7 +10,7 @@ PACKAGEDIR=playwm-$(VERSION)
 IMAGE=$(wildcard image/*)
 CONFIGS=$(wildcard config/*)
 DEBIAN=$(wildcard debian/*)
-SRC=Makefile bin/playwm $(IMAGE) xsession/playwm.desktop $(CONFIGS) $(DEBIAN)
+SRC=Makefile bin/playwm $(IMAGE) xsession/playwm.desktop applications/urxvt.desktop $(CONFIGS) $(DEBIAN)
 
 
 prefix=/usr
@@ -32,7 +32,8 @@ dist: $(TARBALL)
 
 install: 
 	install -D -m 0755 bin/playwm $(DESTDIR)$(bindir)/playwm
-	install -D -m 0644 image/logo64.png $(DESTDIR)$(pixmapsdir)/playwm.png
+	install -D -m 0644 image/logo48.png $(DESTDIR)$(pixmapsdir)/playwm.png
+	install -D -m 0644 image/logo32.xpm $(DESTDIR)$(pixmapsdir)/playwm.xpm
 	install -D -m 0644 image/wallpaper19201080.jpg $(DESTDIR)$(playwmlibdirimage)/wallpaper19201080.jpg
 	install -D -m 0644 xsession/playwm.desktop $(DESTDIR)$(xsessionsdir)/playwm.desktop
 	install -D -m 0644 applications/urxvt.desktop $(DESTDIR)$(playwmlibdirapplications)/urxvt.desktop
@@ -64,7 +65,7 @@ dput:
 	dput ppa:wyderka-t/playwm playwm_*.changes
 
 clean:
-	@rm -rf $(PACKAGEDIR) playwm_*.orig.tar.gz playwm_*.debian.tar.gz playwm_*.dsc playwm_*.build playwm_*.changes playwm_*.deb playwm_*ppa.upload
+	@rm -rf $(PACKAGEDIR) playwm_*.orig.tar.gz playwm_*.debian.tar.gz playwm_*.dsc playwm_*.build playwm_*.changes playwm_*ppa.upload
 	
 
 .PHONY: html dist dsc all build install clean
