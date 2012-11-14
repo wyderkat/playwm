@@ -8,7 +8,7 @@ Homepage: http://www.cofoh.com/playwm/
 
 Package: playwm
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, feh, xcompmgr, tint2, volumeicon-alsa, openbox, faience-icon-theme
+Depends: ${shlibs:Depends}, ${misc:Depends}, feh, xcompmgr, tint2, volumeicon-alsa, openbox, faience-icon-theme, menu, rxvt-unicode
 Description: Window Manager for playing with it's configuration.
  Transparent. 
  Homepage: http://www.cofoh.com/playwm/

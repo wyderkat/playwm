@@ -20,6 +20,7 @@ do
   if [ ! -e "$DOT/$cb" ];
   then
     cp "$c" "$DOT"
+    sed -i "s|_PLAYWM_REPLACE_HOME_|$HOME|" "$DOT/$cb"
   fi
 done
 

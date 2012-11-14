@@ -1,0 +1,10 @@
+73a74
+> launcher_item_app = /usr/share/applications/Thunar.desktop
+74a76
+> launcher_item_app = /usr/share/applications/evolution.desktop
+75a78,82
+> launcher_item_app = /usr/share/applications/gvim.desktop
+> launcher_item_app = /usr/share/applications/teamviewer-teamviewer7.desktop
+> launcher_item_app = /usr/share/applications/decibel-audio-player.desktop
+> launcher_item_app = /usr/share/applications/skype.desktop
+> launcher_item_app = /usr/share/applications/inkscape.desktop

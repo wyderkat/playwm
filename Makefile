@@ -12,6 +12,7 @@ CONFIGS=$(wildcard config/*)
 DEBIAN=$(wildcard debian/*)
 SRC=Makefile bin/playwm $(IMAGE) xsession/playwm.desktop $(CONFIGS) $(DEBIAN)
 
+
 prefix=/usr
 bindir=$(prefix)/bin
 sharedir=$(prefix)/share
@@ -21,8 +22,9 @@ docdir=$(sharedir)/doc
 mandir=$(sharedir)/man
 man1dir=$(mandir)/man1
 playwmlibdir=$(prefix)/lib/playwm
-playwmconflibdir=$(playwmlibdir)/config
-playwmimagelibdir=$(playwmlibdir)/image
+playwmlibdirconf=$(playwmlibdir)/config
+playwmlibdirimage=$(playwmlibdir)/image
+playwmlibdirapplications=$(playwmlibdir)/applications
 
 all: 
 
@@ -31,18 +33,17 @@ dist: $(TARBALL)
 install: 
 	install -D -m 0755 bin/playwm $(DESTDIR)$(bindir)/playwm
 	install -D -m 0644 image/logo64.png $(DESTDIR)$(pixmapsdir)/playwm.png
-	install -D -m 0644 image/wallpaper19201080.jpg $(DESTDIR)$(playwmimagelibdir)/wallpaper19201080.jpg
+	install -D -m 0644 image/wallpaper19201080.jpg $(DESTDIR)$(playwmlibdirimage)/wallpaper19201080.jpg
 	install -D -m 0644 xsession/playwm.desktop $(DESTDIR)$(xsessionsdir)/playwm.desktop
-	mkdir -p $(DESTDIR)$(playwmconflibdir)
-	install -D -m 0644 $(CONFIGS) $(DESTDIR)$(playwmconflibdir)
+	install -D -m 0644 applications/urxvt.desktop $(DESTDIR)$(playwmlibdirapplications)/urxvt.desktop
+	mkdir -p $(DESTDIR)$(playwmlibdirconf)
+	install -D -m 0644 $(CONFIGS) $(DESTDIR)$(playwmlibdirconf)
 
-# for develop environment, should be run after make install
-selfdevelop:
-	ln -sf $(CURDIR)/bin/playwm $(DESTDIR)$(bindir)/playwm
-	ln -sf $(CURDIR)/image/logo64.png $(DESTDIR)$(pixmapsdir)/playwm.png
-	ln -sf $(CURDIR)/xsession/playwm.desktop $(DESTDIR)$(xsessionsdir)/playwm.desktop
-	ln -sf $(addprefix $(CURDIR)/,$(CONFIGS)) $(DESTDIR)$(playwmconflibdir)
-	ln -sf $(addprefix $(CURDIR)/,$(CONFIGS)) $(DESTDIR)$(HOME)/.playwm
+MYCONFIGSPATCHES=autostart.openbox.sh launch.bar.tint2rc windows.openbox.xml
+self:
+	@mkdir -p $(HOME)/.playwm
+	cp $(CONFIGS) $(HOME)/.playwm
+	@$(foreach p,$(MYCONFIGSPATCHES),patch $(HOME)/.playwm/$(p) < config/.patch.$(p);)
 
 $(TARBALL) : $(SRC)
 	@tar zcf $@ --transform 's%^%$(PACKAGEDIR)/%' $^

@@ -70,8 +70,15 @@ tooltip_font_color = #000000 80
 
 #
 #   4) APPLICATIONS LIST
-launcher_item_app = /usr/lib/playwm/applications/urxvt.desktop
+launcher_item_app = /usr/share/applications/gnome-terminal.desktop
+launcher_item_app = /usr/share/applications/Thunar.desktop
 launcher_item_app = /usr/share/applications/firefox.desktop
+launcher_item_app = /usr/share/applications/evolution.desktop
 launcher_item_app = /usr/share/applications/gimp.desktop
+launcher_item_app = /usr/share/applications/gvim.desktop
+launcher_item_app = /usr/share/applications/teamviewer-teamviewer7.desktop
+launcher_item_app = /usr/share/applications/decibel-audio-player.desktop
+launcher_item_app = /usr/share/applications/skype.desktop
+launcher_item_app = /usr/share/applications/inkscape.desktop
 
 

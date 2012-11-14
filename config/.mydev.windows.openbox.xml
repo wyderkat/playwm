@@ -798,7 +798,7 @@
     <!-- default menu file (or custom one in $HOME/.config/openbox/) -->
     <!-- system menu files on Debian systems -->
     <file>/var/lib/openbox/debian-menu.xml</file>
-    <file>_PLAYWM_REPLACE_HOME_/.playwm/menu.openbox.xml</file>
+    <file>/home/tom/.playwm/menu.openbox.xml</file>
     <hideDelay>200</hideDelay>
     <!-- if a press-release lasts longer than this setting (in milliseconds), the
        menu is hidden again -->

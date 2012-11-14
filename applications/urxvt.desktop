@@ -1,0 +1,15 @@
+[Desktop Entry]
+Name=Terminal (rx)
+Comment=Use the command line
+TryExec=urxvt
+Exec=urxvt
+Icon=utilities-terminal
+Type=Application
+Categories=TerminalEmulator;
+StartupNotify=true
+Keywords=Run;
+Actions=New
+
+[Desktop Action New]
+Name=New Terminal (rx)
+Exec=urxvt
