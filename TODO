@@ -2,12 +2,9 @@
 Czy zmianiac .fonts.confd ? 
 Jak
 
-9.  Login proccess:
-  playwm.sh:
-    done 1. copy config
-    1a. update config
-    2. turn on logs
-    done 3. exec openbox
+
+Update config when start.
+Version numbers
 
 
 

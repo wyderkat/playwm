@@ -1,8 +1,9 @@
-#!/bin/sh
+#!/bin/bash
 
 DOT="$HOME/.playwm"
 AUTOSTART="$DOT/autostart.openbox.sh"
 OPENBOXCONFIG="$DOT/windows.openbox.xml"
+LOG="$DOT/log"
 
 # Clean up after GDM
 #xprop -root -remove _NET_NUMBER_OF_DESKTOPS \
@@ -12,6 +13,10 @@ OPENBOXCONFIG="$DOT/windows.openbox.xml"
 if [ ! -d "$DOT" ];
 then
   mkdir "$DOT"
+fi
+if [ ! -d "$LOG" ];
+then
+  mkdir "$LOG"
 fi
 
 for c in /usr/lib/playwm/config/* ;
@@ -25,4 +30,4 @@ do
 done
 
 
-exec /usr/bin/openbox --startup "sh $AUTOSTART" --config-file "$OPENBOXCONFIG" "$@"
+exec /usr/bin/openbox --startup "bash $AUTOSTART" --config-file "$OPENBOXCONFIG" "$@" &> $LOG/openbox

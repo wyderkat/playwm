@@ -51,6 +51,10 @@ After changing any configuration file, type make in a ~/.playwm directory to
 refresh/restart components.  Make also backup copy of files you are changing for
 own safety. 
 
+To view logs from running command go to
+->  log/
+directory.
+
 That's it. Have fun playing PlayWM.
 
 
