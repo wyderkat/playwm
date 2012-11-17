@@ -2,8 +2,10 @@
 
 DOT="$HOME/.playwm"
 AUTOSTART="$DOT/autostart.openbox.sh"
-OPENBOXCONFIG="$DOT/windows.openbox.xml"
+OPENBOX_CONF="$DOT/windows.openbox.xml"
 LOG="$DOT/log"
+THEMES="$HOME/.themes"
+FONTS_CONF_D="$HOME/.fonts.conf.d"
 
 # Clean up after GDM
 #xprop -root -remove _NET_NUMBER_OF_DESKTOPS \
@@ -18,6 +20,14 @@ if [ ! -d "$LOG" ];
 then
   mkdir "$LOG"
 fi
+if [ ! -d "$THEMES" ];
+then
+  mkdir "$THEMES"
+fi
+if [ ! -d "$FONTS_CONF_D" ];
+then
+  mkdir "$FONTS_CONF_D"
+fi
 
 for c in /usr/lib/playwm/config/* ;
 do
@@ -28,8 +38,8 @@ do
     sed -i "s|_PLAYWM_REPLACE_HOME_|$HOME|" "$DOT/$cb"
   fi
 done
-mkdir -p ~/.themes
 ln -sf "$DOT/theme" ~/.themes/PlayWM
+ln -sf "$DOT/fonts.conf" "$FONTS_CONF_D/playwm.fonts.conf"
 
 
-exec /usr/bin/openbox --startup "bash $AUTOSTART" --config-file "$OPENBOXCONFIG" "$@" &> $LOG/openbox
+exec /usr/bin/openbox --startup "bash $AUTOSTART" --config-file "$OPENBOX_CONF" "$@" &> $LOG/openbox
