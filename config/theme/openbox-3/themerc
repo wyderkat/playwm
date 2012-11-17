@@ -1,0 +1,129 @@
+# PlayWM theme based on Phoenix theme by lastchancetosee
+# Documentation on OpenBox themes can be found on the OpenBox wiki
+# http://openbox.org/wiki/Help:Themes
+
+# Windows
+# Window geometry
+padding.width: 4
+border.width: 1
+window.client.padding.width: 0
+window.client.padding.height: 0
+window.handle.width: 0
+
+# Border colors
+window.active.border.color: #cfcfcf
+window.inactive.border.color: #cfcfcf
+window.active.client.color: #cfcfcf
+window.inactive.client.color: #3E3C3A
+window.active.title.separator.color:  #565656
+window.inactive.title.separator.color: #565656
+
+# Text shadows
+window.active.label.text.font: shadow=n
+window.inactive.label.text.font: shadow=n
+
+# Window title justification
+window.label.text.justify: center
+
+# Active window
+window.active.title.bg: Flat Gradient Vertical
+window.active.title.bg.color: #222222
+window.active.title.bg.colorTo: #565656
+window.active.label.bg: Parentrelative
+window.active.label.text.color: #fafafa
+
+window.active.handle.bg: Flat Gradient Vertical
+window.active.handle.bg.color: #3E3C3A
+window.active.handle.bg.colorTo: #3E3C3A
+
+window.active.grip.bg: Flat Solid
+window.active.grip.bg.color: #3E3C3A
+
+
+window.active.button.unpressed.bg: ParentRelative
+window.active.button.unpressed.image.color: #f88f1f
+
+window.active.button.pressed.bg: ParentRelative
+window.active.button.pressed.image.color: #ffffff
+
+window.active.button.disabled.bg: ParentRelative
+window.active.button.disabled.image.color: #bbbbbb
+
+window.active.button.toggled.bg: ParentRelative
+window.active.button.toggled.image.color: #fbd3a7
+
+window.active.button.hover.bg: ParentRelative
+window.active.button.hover.image.color: #fbd3a7
+
+# Inactive windows
+window.inactive.title.bg: Flat Gradient Vertical
+window.inactive.title.bg.color: #222222
+window.inactive.title.bg.colorTo: #565656
+
+window.inactive.label.bg: Parentrelative
+window.inactive.label.text.color: #bbbbbb
+
+window.inactive.handle.bg: Flat Gradient Vertical
+window.inactive.handle.bg.color: #3E3C3A
+window.inactive.handle.bg.colorTo: #3E3C3A
+
+window.inactive.grip.bg: Flat Gradient Vertical
+window.inactive.grip.bg.color: #3E3C3A
+window.inactive.grip.bg.colorTo: #3E3C3A
+
+window.inactive.button.unpressed.bg: ParentRelative
+window.inactive.button.unpressed.image.color: #bbbbbb
+
+window.inactive.button.pressed.bg: ParentRelative
+window.inactive.button.pressed.image.color: #bbbbbb
+
+window.inactive.button.disabled.bg: ParentRelative
+window.inactive.button.disabled.image.color: #bbbbbb
+
+window.inactive.button.toggled.bg: ParentRelative
+window.inactive.button.toggled.image.color: #f43711
+
+window.inactive.button.hover.bg: ParentRelative
+window.inactive.button.hover.image.color: #dddddd
+
+
+# OSD
+osd.border.width: 1
+osd.border.color:  #262729
+
+osd.bg: flat gradient vertical border
+osd.bg.color: #222222
+osd.bg.colorTo: #565656
+osd.bg.border.color: #f88f1f
+osd.label.bg: parentrelative
+osd.label.text.color: #bbbbbb
+
+osd.hilight.bg: flat gradient vertical
+osd.hilight.bg.color: #fbca8d
+osd.hilight.bg.colorTo: #f59567
+
+osd.unhilight.bg: flat solid
+osd.unhilight.bg.color: #606060
+
+
+# Menu
+# Menu:Geometry
+menu.border.width: 1
+menu.border.color: #ffffff
+menu.overlap.x: -5
+menu.overlap.y: -1
+# Menu:Title
+menu.title.bg: solid flat
+menu.title.bg.color: #111111
+menu.title.text.color: #c3c3c3
+
+menu.items.bg: solid flat
+menu.items.bg.color: #111111
+menu.items.text.color: #c3c3c3
+menu.items.disabled.text.color: #565656
+
+menu.items.active.bg: gradient vertical
+menu.items.active.bg.color: #fbca8d
+menu.items.active.bg.colorTo: #f59567
+menu.items.active.text.color: #000000
+menu.items.active.disabled.text.color: #565656

@@ -24,10 +24,12 @@ do
   cb=`basename $c`
   if [ ! -e "$DOT/$cb" ];
   then
-    cp "$c" "$DOT"
+    cp -r "$c" "$DOT"
     sed -i "s|_PLAYWM_REPLACE_HOME_|$HOME|" "$DOT/$cb"
   fi
 done
+mkdir -p ~/.themes
+ln -sf "$DOT/theme" ~/.themes/PlayWM
 
 
 exec /usr/bin/openbox --startup "bash $AUTOSTART" --config-file "$OPENBOXCONFIG" "$@" &> $LOG/openbox

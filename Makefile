@@ -8,9 +8,8 @@ VERSION=0.1
 TARBALL=playwm_$(VERSION).orig.tar.gz
 PACKAGEDIR=playwm-$(VERSION)
 IMAGE=$(wildcard image/*)
-CONFIGS=$(wildcard config/*)
 DEBIAN=$(wildcard debian/*)
-SRC=Makefile bin/playwm $(IMAGE) xsession/playwm.desktop applications/urxvt.desktop $(CONFIGS) $(DEBIAN)
+SRC=Makefile bin/playwm $(IMAGE) xsession/playwm.desktop applications/urxvt.desktop config $(DEBIAN)
 
 
 prefix=/usr
@@ -37,13 +36,12 @@ install:
 	install -D -m 0644 image/wallpaper19201080.jpg $(DESTDIR)$(playwmlibdirimage)/wallpaper19201080.jpg
 	install -D -m 0644 xsession/playwm.desktop $(DESTDIR)$(xsessionsdir)/playwm.desktop
 	install -D -m 0644 applications/urxvt.desktop $(DESTDIR)$(playwmlibdirapplications)/urxvt.desktop
-	mkdir -p $(DESTDIR)$(playwmlibdirconf)
-	install -D -m 0644 $(CONFIGS) $(DESTDIR)$(playwmlibdirconf)
+	cp -r config  $(DESTDIR)$(playwmlibdir)
 
 MYCONFIGSPATCHES=autostart.openbox.sh launch.bar.tint2rc windows.openbox.xml
 self:
 	@mkdir -p $(HOME)/.playwm
-	cp $(CONFIGS) $(HOME)/.playwm
+	cp -r config/* $(HOME)/.playwm
 	@$(foreach p,$(MYCONFIGSPATCHES),patch $(HOME)/.playwm/$(p) < config/.patch.$(p);)
 
 $(TARBALL) : $(SRC)
