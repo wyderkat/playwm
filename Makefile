@@ -72,5 +72,5 @@ self:
 
 # generate config patches for development
 diff:
-	@$(foreach p,$(MYCONFIGSPATCHES),diff $(HOME)/.playwm/$(p) config/$(p) > config/.patch.$(p);)
+	@$(foreach p,$(MYCONFIGSPATCHES),diff config/$(p) $(HOME)/.playwm/$(p) > config/.patch.$(p) || true;)
 
