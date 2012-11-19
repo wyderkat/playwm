@@ -38,11 +38,6 @@ install:
 	install -D -m 0644 applications/urxvt.desktop $(DESTDIR)$(playwmlibdirapplications)/urxvt.desktop
 	cp -r config  $(DESTDIR)$(playwmlibdir)
 
-MYCONFIGSPATCHES=autostart.openbox.sh launch.bar.tint2rc windows.openbox.xml
-self:
-	@mkdir -p $(HOME)/.playwm
-	cp -r config/* $(HOME)/.playwm
-	@$(foreach p,$(MYCONFIGSPATCHES),patch $(HOME)/.playwm/$(p) < config/.patch.$(p);)
 
 $(TARBALL) : $(SRC)
 	@tar zcf $@ --transform 's%^%$(PACKAGEDIR)/%' $^
@@ -67,3 +62,15 @@ clean:
 	
 
 .PHONY: html dist dsc all build install clean
+
+MYCONFIGSPATCHES=autostart.openbox.sh launch.bar.tint2rc windows.openbox.xml
+# update configs for development
+self:
+	@mkdir -p $(HOME)/.playwm
+	cp -r config/* $(HOME)/.playwm
+	@$(foreach p,$(MYCONFIGSPATCHES),patch $(HOME)/.playwm/$(p) < config/.patch.$(p);)
+
+# generate config patches for development
+diff:
+	@$(foreach p,$(MYCONFIGSPATCHES),diff $(HOME)/.playwm/$(p) config/$(p) > config/.patch.$(p);)
+
