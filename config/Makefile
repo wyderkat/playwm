@@ -1,6 +1,7 @@
 all: reconf
 
-reconf: .reconf_openbox_FLAG .reconf_tint2_FLAG
+
+reconf: .reconf_openbox_FLAG .reconf_tint2_FLAG .reconf_terminal_FLAG
 
 .reconf_tint2_FLAG: task.bar.tint2rc launch.bar.tint2rc
 	killall -USR1 tint2
@@ -8,6 +9,10 @@ reconf: .reconf_openbox_FLAG .reconf_tint2_FLAG
 
 .reconf_openbox_FLAG: windows.openbox.xml menu.openbox.xml 
 	killall -USR2 openbox
+	touch $@
+
+.reconf_terminal_FLAG: terminal.Xresources
+	xrdb -merge terminal.Xresources
 	touch $@
 
 # this doesn't work for launching applications
