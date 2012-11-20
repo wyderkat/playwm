@@ -7,7 +7,7 @@
 
 <menu id="root-menu" label="Openbox 3">
   <item label="Term">
-    <action name="Execute"><execute>gnome-terminal</execute></action>
+    <action name="Execute"><execute>urxvt</execute></action>
   </item>
   <item label="WWW">
     <action name="Execute"><execute>firefox</execute></action>

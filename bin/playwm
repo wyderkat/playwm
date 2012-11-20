@@ -29,15 +29,8 @@ then
   mkdir "$FONTS_CONF_D"
 fi
 
-for c in /usr/lib/playwm/config/* ;
-do
-  cb=`basename $c`
-  if [ ! -e "$DOT/$cb" ];
-  then
-    cp -r "$c" "$DOT"
-    sed -i "s|_PLAYWM_REPLACE_HOME_|$HOME|" "$DOT/$cb"
-  fi
-done
+update-playwm &> $LOG/update-playwm
+
 ln -sf "$DOT/theme" ~/.themes/PlayWM
 ln -sf "$DOT/fonts.conf" "$FONTS_CONF_D/playwm.fonts.conf"
 

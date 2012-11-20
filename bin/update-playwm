@@ -1,0 +1,78 @@
+#!/usr/bin/python
+import hashlib
+import os
+import sys
+import shutil
+import copy
+ 
+system_conf = '/usr/lib/playwm/config/'
+home_dir = os.path.expanduser('~')
+user_conf = home_dir+"/.playwm/"
+
+system_v_fn = system_conf+".versioning"
+user_v_fn = user_conf+".versioning"
+
+user_report_fn = user_conf+"UPDATE_read_me"
+
+def read_versioning(versioning_fn):
+  ver_f = file(versioning_fn)
+  lines = ver_f.readlines()
+  ver_f.close()
+  md5sums = {}
+  for l in lines:
+    l = l.split('=')
+    md5sums[ l[0] ] =  l[1].rstrip('\n') 
+  return md5sums
+
+system_h = read_versioning(system_v_fn)
+
+if not os.path.exists( user_v_fn ):
+  user_h = copy.deepcopy(system_h) # this mean all files look changed
+  user_h['_VERSION_']='MISSING'
+else:
+  user_h = read_versioning(user_v_fn)
+
+
+
+if user_h['_VERSION_'] != system_h['_VERSION_']:
+  print "updating from %s to %s..." % (user_h['_VERSION_'], system_h['_VERSION_']) 
+  to_report = ""
+  
+  for walk_root, walk_dirs, walk_files in os.walk(system_conf):
+    for filename in walk_files:
+      f_system = os.path.join(walk_root, filename) # file in system dir
+      f_rel = os.path.relpath( f_system , system_conf ) # file relative name
+      f_user = os.path.join(user_conf, f_rel) # file in user dir
+      if f_rel == ".versioning":
+        continue
+      if not os.path.exists( f_user ):
+        (dir,fil) = os.path.split(f_user)
+        if not os.path.exists( dir ):
+          os.makedirs(dir)
+        shutil.copyfile(f_system , f_user)
+        print "File %s copied" % f_rel
+      else: # file exists
+        actual_md5 = hashlib.md5(open(f_user, 'r').read()).hexdigest()
+
+        if user_h[f_rel] != actual_md5:
+          print "File %s has CHANGED" % f_rel
+          to_report += "File %s cannot be updated because system detect some changes in it.\n" % (f_user) 
+          to_report += "Please do manual merge between file %s and %s\n" % (f_user, f_system) 
+        else:
+          shutil.copyfile(f_system , f_user)
+          print "File %s updated" % f_rel
+  if to_report != "":
+    report_file = file(user_report_fn, "w")
+    report_file.write(to_report)
+    report_file.close()
+  else:
+    try:
+      os.remove(user_report_fn) # this also delete old files from previous updates
+    except OSError:
+      pass
+
+  # At the end copy new versioning file - Update finished!
+  shutil.copyfile( system_v_fn , user_v_fn )
+else:
+  print "nothing to update, installed version %s" % (system_h['_VERSION_']) 
+
