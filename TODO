@@ -1,4 +1,3 @@
-*) - faience theme
 *) Gtk theme
 *) Documentation. 
 Add only headers and links to doc first.
@@ -14,5 +13,3 @@ Uzaleznic ludzi od dobrej lektury konfiguracji.
 TODEVELOP:
 - cliking animation
 
-sudo add-apt-repository ppa:tiheum/equinox
-sudo apt-get update && sudo apt-get install faience-icon-theme

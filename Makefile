@@ -4,7 +4,7 @@
 # License: GPL-2
 ##
 
-VERSION=0.1
+VERSION=0.2
 VERSIONING=config/.versioning
 TARBALL=playwm_$(VERSION).orig.tar.gz
 PACKAGEDIR=playwm-$(VERSION)
@@ -13,7 +13,7 @@ DEBIAN=$(wildcard debian/*)
 CONFIGS=applications.openbox.xml autostart.openbox.sh fonts.conf keyboard.openbox.xml launch.bar.tint2rc Makefile menu.openbox.xml mouse.openbox.xml START.txt task.bar.tint2rc terminal.Xresources theme windows.openbox.xml
 CONFIGS_PRE=$(VERSIONING) $(addprefix config/,$(CONFIGS))
 ALL_CONFIGS=$(shell find config/ -type f )
-SRC=Makefile bin/playwm bin/update-playwm $(IMAGE) xsession/playwm.desktop applications/urxvt.desktop $(CONFIGS_PRE) $(DEBIAN)
+SRC=Makefile bin/playwm bin/update-playwm $(IMAGE) xsession/playwm.desktop applications/urxvt.desktop $(CONFIGS_PRE) $(DEBIAN) README INSTALL COPYING
 
 
 prefix=/usr
@@ -29,7 +29,7 @@ playwmlibdirconf=$(playwmlibdir)/config
 playwmlibdirimage=$(playwmlibdir)/image
 playwmlibdirapplications=$(playwmlibdir)/applications
 
-.PHONY: all dist install dsc deb dput $(VERSIONING) clean self diff
+.PHONY: all dist install dsc deb dput $(VERSIONING) clean cofoh self diff pub
 
 all: $(VERSIONING)
 
@@ -65,6 +65,13 @@ deb: $(TARBALL)
 dput:
 	dput ppa:wyderka-t/playwm playwm_*.changes
 
+cofoh: $(TARBALL)
+	scp $^ Cofoh:cofoh/f/playwm_$(VERSION).tgz
+	scp $^ Cofoh:cofoh/f/playwm_latest.tgz
+
+
+pub: dput cofoh
+
 
 
 $(VERSIONING):
@@ -79,7 +86,7 @@ clean:
 
 # author testing environment
 
-MYCONFIGSPATCHES=autostart.openbox.sh launch.bar.tint2rc
+MYCONFIGSPATCHES=autostart.openbox.sh launch.bar.tint2rc terminal.Xresources
 # update configs for development
 self:
 	@mkdir -p $(HOME)/.playwm

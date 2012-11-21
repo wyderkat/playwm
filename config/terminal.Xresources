@@ -9,7 +9,7 @@
 URxvt.depth: 32
 URxvt.background: [65]#000000
 URxvt*foreground: #ffffff
-URxvt.iconFile: /usr/share/icons/Faience/apps/scalable/terminal.svg
+URxvt.iconFile: /usr/share/icons/Humanity/apps/128/terminal.svg
 ! clickable urls
 URxvt.perl-ext-common:  default,matcher
 URxvt.urlLauncher:      /usr/bin/firefox
