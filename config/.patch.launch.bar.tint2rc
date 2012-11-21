@@ -1,3 +1,7 @@
+55c55
+< launcher_icon_theme = gnome
+---
+> launcher_icon_theme = Faience
 73a74
 > launcher_item_app = /usr/share/applications/Thunar.desktop
 74a76
