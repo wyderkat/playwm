@@ -62,7 +62,7 @@ deb: $(TARBALL)
 	cd $(PACKAGEDIR) && debuild -us -uc
 	@rm -r $(PACKAGEDIR)
 
-dput:
+dput: dsc
 	dput ppa:wyderka-t/playwm playwm_*.changes
 
 cofoh: $(TARBALL)

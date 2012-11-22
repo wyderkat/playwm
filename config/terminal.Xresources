@@ -1,10 +1,17 @@
-! TODO
-! Xft.dpi: 96
-! Xft.antialias: 1
-! Xft.hinting:    1
-! Xft.hintstyle:  hintfull
-! Xft.rgba:       rgb
-
+! MUST TO READ - HEADER
+!
+! This is configuration of terminal, which is "urxvt" in PlayWM.
+!
+! Comments here begins with "!" sign.
+!
+! Table of Contents:
+!   TODO - to be done
+!
+! Full documentation can be found by exectuting command 
+!  man urxvt
+! in the section RESOURCES
+!
+! END OF HEADER
 
 URxvt.depth: 32
 URxvt.background: [65]#000000
@@ -28,8 +35,6 @@ URxvt*boldFont: xft:Terminus:pixelsize=14
 
 
 ! tangoesque scheme
-! *background: #111111
-! *foreground: #babdb6
 ! Black (not tango) + DarkGrey
 *color0:  #000000
 *color8:  #555753
@@ -55,4 +60,11 @@ URxvt*boldFont: xft:Terminus:pixelsize=14
 *color7:  #cccccc
 *color15: #ffffff
 
+
+! TODO
+! Xft.dpi: 96
+! Xft.antialias: 1
+! Xft.hinting:    1
+! Xft.hintstyle:  hintfull
+! Xft.rgba:       rgb
 

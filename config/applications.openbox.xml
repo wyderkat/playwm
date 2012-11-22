@@ -1,3 +1,20 @@
+<!-- MUST TO READ - HEADER
+
+ In this file you can specify default behaviour of new windows.
+
+ Please note that this is XML file, and comments format here is quite 
+ different. 
+
+ Table of Contents:
+   TODO - to be done
+
+
+ Full documentation can be found here:
+   http://openbox.org/wiki/Help:Applications
+
+
+END OF HEADER -->
+
 <applications>
   <application class="Workrave">
     <desktop>7</desktop>

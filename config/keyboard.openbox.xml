@@ -1,5 +1,22 @@
+<!-- MUST TO READ - HEADER
+
+ In this file you can find all keys bindings. 
+ Please note that this is XML file, and comments format here is quite 
+ different. 
+
+ Table of Contents:
+   TODO - to be done
+
+
+ Full documentation can be found here:
+   http://openbox.org/wiki/Help:Bindings#Key_bindings
+ And here is full list of actions you can connect keys to:
+   http://openbox.org/wiki/Help:Actions
+
+
+END OF HEADER -->
+
 <keyboard>
-  <chainQuitKey>space</chainQuitKey>
   <keybind key="XF86AudioRaiseVolume">
     <action name="Execute">
       <command>amixer -q sset Master 1+</command>

@@ -1,3 +1,25 @@
+<!-- MUST TO READ - HEADER
+
+ In this file you can find all mouse bindings. 
+ Please note that this is XML file, and comments format here is quite 
+ different. 
+
+ This file you will not change probably as often as coresponding:
+   keyboard.openbox.xml
+  
+
+ Table of Contents:
+   TODO - to be done
+
+
+ Full documentation can be found here:
+   http://openbox.org/wiki/Help:Bindings#Mouse_bindings
+ And here is full list of actions you can connect mouse keys to:
+   http://openbox.org/wiki/Help:Actions
+
+
+END OF HEADER -->
+
 <mouse>
   <dragThreshold>1</dragThreshold>
   <!-- number of pixels the mouse must move before a drag begins -->

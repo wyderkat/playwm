@@ -45,7 +45,7 @@ wm_menu = 0
 panel_layer = top
 panel_background_id = 1
 panel_items = L
-strut_policy = follow_size
+strut_policy = minimum
 
 #   3) LAUNCHER CONFIGURATION
 #launcher_background_id = 2
