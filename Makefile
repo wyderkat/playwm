@@ -63,7 +63,7 @@ deb: $(TARBALL)
 	@rm -r $(PACKAGEDIR)
 
 dput: dsc
-	dput ppa:wyderka-t/playwm playwm_*.changes
+	dput ppa:wyderka-t/playwm playwm_*source.changes
 
 cofoh: $(TARBALL)
 	scp $^ Cofoh:cofoh/f/playwm_$(VERSION).tgz
