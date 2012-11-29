@@ -27,6 +27,7 @@ URxvt.scrollstyle: plain
 URxvt.scrollBar_right: true
 URxvt.thickness: 7
 URxvt.cursorUnderline: true
+URxvt.cursorBlink: true
 
 
 URxvt*font: xft:Terminus:pixelsize=14

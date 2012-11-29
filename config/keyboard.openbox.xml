@@ -58,16 +58,6 @@ END OF HEADER -->
     </action>
   </keybind>
   <keybind key="W-space" chroot="true">
-    <keybind key="comma">
-      <action name="Execute">
-        <command>amixer -q sset Master 1-</command>
-      </action>
-    </keybind>
-    <keybind key="period">
-      <action name="Execute">
-        <command>amixer -q sset Master 1+</command>
-      </action>
-    </keybind>
     <keybind key="m">
       <action name="ToggleMaximize">
         </action>

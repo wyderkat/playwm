@@ -112,16 +112,6 @@ END OF HEADER -->
         <to>next</to>
       </action>
     </mousebind>
-    <mousebind button="S-Up" action="Click">
-      <action name="Execute">
-        <command>amixer -q sset Master 1+</command>
-      </action>
-    </mousebind>
-    <mousebind button="S-Down" action="Click">
-      <action name="Execute">
-        <command>amixer -q sset Master 1-</command>
-      </action>
-    </mousebind>
   </context>
   <context name="Titlebar">
     <mousebind button="Left" action="Drag">

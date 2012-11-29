@@ -6,7 +6,7 @@
 > launcher_item_app = /usr/share/applications/Thunar.desktop
 74a76
 > launcher_item_app = /usr/share/applications/evolution.desktop
-76,77c78,83
+76,77c78,84
 < 
 < 
 ---
@@ -16,3 +16,4 @@
 > launcher_item_app = /usr/share/applications/skype.desktop
 > launcher_item_app = /usr/share/applications/inkscape.desktop
 > launcher_item_app = /usr/share/applications/google-earth.desktop
+> launcher_item_app = /usr/share/applications/chromium-browser.desktop
