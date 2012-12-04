@@ -1,45 +1,137 @@
 <!-- MUST TO READ - HEADER
 
- In this file you can find all keys bindings. 
- Please note that this is XML file, and comments format here is quite 
- different. 
+ In this file you can define/redefine keys bindings.
 
  Table of Contents:
-   TODO - to be done
+   1) KEY COMBINATIONS
+      Learn here about key combinations syntax
+   2) KEY NAMES
+      Where to find key names
+   3) POSSIBLE ACTIONS
+      List of actions which you can connect to keys
+   4) EXAMPLE
+      PlayWM default key bindings, which are good as an example. 
 
 
  Full documentation can be found here:
    http://openbox.org/wiki/Help:Bindings#Key_bindings
- And here is full list of actions you can connect keys to:
-   http://openbox.org/wiki/Help:Actions
 
 
 END OF HEADER -->
 
+<!--   1) KEY COMBINATIONS
+  General key combination sytax is
+  Modifier-...-Key
+  where Modifier can be one of these characters
+    S     Shift key
+    C     Control key
+    A     Alt key
+    W     Windows key
+    M     Meta key
+ You can add as many modifiers as you want. 
+
+  Example of key combinations:
+    S-A-Tab
+  When holding pressed Shift and ALt keys user stroke Tab key. 
+-->
+
+<!--   2) KEY NAMES
+  Most key names are the one letter symbols. For example name for "j" key is "j". 
+  But for special keys you can use "find_key_name" application.
+  Stroke key when find_key_name window has focus.
+-->
+
+<!--   3) POSSIBLE ACTIONS
+  List of possible actions which you can connect to keys strokes is long and boring. 
+  Please check out this page, I will not copy it here. 
+   http://openbox.org/wiki/Help:Actions
+-->
+ 
+
 <keyboard>
-  <keybind key="XF86AudioRaiseVolume">
-    <action name="Execute">
-      <command>amixer -q sset Master 1+</command>
-    </action>
-  </keybind>
-  <keybind key="XF86AudioLowerVolume">
-    <action name="Execute">
-      <command>amixer -q sset Master 1-</command>
-    </action>
-  </keybind>
-  <keybind key="W-m">
+<!--   4) EXAMPLE -->
+
+  <keybind key="W-space">
     <action name="ToggleMaximize"> </action>
-  </keybind>
-  <keybind key="W-n">
-    <action name="ToggleShade"> </action>
   </keybind>
   <keybind key="W-q">
     <action name="Close"> </action>
   </keybind>
+  <keybind key="W-n">
+    <action name="Iconify"> </action>
+  </keybind>
+  <keybind key="W-s">
+    <action name="ToggleShade"> </action>
+  </keybind>
   <keybind key="W-f">
     <action name="ToggleFullscreen"> </action>
   </keybind>
-  <keybind key="W-Tab">
+  <keybind key="W-m">
+    <action name="ShowMenu"> <menu>client-menu</menu> </action>
+  </keybind>
+  <keybind key="W-Left">
+    <action name="GoToDesktop"> <to>left</to> <wrap>no</wrap> </action>
+  </keybind>
+  <keybind key="W-h">
+    <action name="GoToDesktop"> <to>left</to> <wrap>no</wrap> </action>
+  </keybind>
+  <keybind key="W-j">
+    <action name="GoToDesktop"> <to>left</to> <wrap>no</wrap> </action>
+  </keybind>
+  <keybind key="W-Right">
+    <action name="GoToDesktop"> <to>right</to> <wrap>no</wrap> </action>
+  </keybind>
+  <keybind key="W-l">
+    <action name="GoToDesktop"> <to>right</to> <wrap>no</wrap> </action>
+  </keybind>
+  <keybind key="W-k">
+    <action name="GoToDesktop"> <to>right</to> <wrap>no</wrap> </action>
+  </keybind>
+  <keybind key="S-W-Left">
+    <action name="SendToDesktop"> <to>left</to> <wrap>no</wrap> </action>
+  </keybind>
+  <keybind key="S-W-j">
+    <action name="SendToDesktop"> <to>left</to> <wrap>no</wrap> </action>
+  </keybind>
+  <keybind key="S-W-Right">
+    <action name="SendToDesktop"> <to>right</to> <wrap>no</wrap> </action>
+  </keybind>
+  <keybind key="S-W-k">
+    <action name="SendToDesktop"> <to>right</to> <wrap>no</wrap> </action>
+  </keybind>
+  <keybind key="W-F1">
+    <action name="GoToDesktop"> <to>1</to> </action>
+  </keybind>
+  <keybind key="W-F2">
+    <action name="GoToDesktop"> <to>2</to> </action>
+  </keybind>
+  <keybind key="W-F3">
+    <action name="GoToDesktop"> <to>3</to> </action>
+  </keybind>
+  <keybind key="W-F4">
+    <action name="GoToDesktop"> <to>4</to> </action>
+  </keybind>
+  <keybind key="W-F5">
+    <action name="GoToDesktop"> <to>5</to> </action>
+  </keybind>
+  <keybind key="W-F6">
+    <action name="GoToDesktop"> <to>6</to> </action>
+  </keybind>
+  <keybind key="W-F7">
+    <action name="GoToDesktop"> <to>7</to> </action>
+  </keybind>
+  <keybind key="W-d">
+    <action name="ToggleShowDesktop"/>
+  </keybind>
+  <keybind key="W-Escape">
+    <action name="Lower"/>
+    <action name="FocusToBottom"/>
+    <action name="Unfocus"/>
+  </keybind>
+  <keybind key="W-Print">
+    <action name="Execute"> <command>gnome-screenshot -w</command> </action>
+  </keybind>
+  <keybind key="A-Tab">
     <action name="NextWindow">
       <finalactions>
         <action name="Focus"/>
@@ -48,158 +140,7 @@ END OF HEADER -->
       </finalactions>
     </action>
   </keybind>
-  <keybind key="W-S-Tab">
-    <action name="PreviousWindow">
-      <finalactions>
-        <action name="Focus"/>
-        <action name="Raise"/>
-        <action name="Unshade"/>
-      </finalactions>
-    </action>
-  </keybind>
-  <keybind key="W-space" chroot="true">
-    <keybind key="m">
-      <action name="ToggleMaximize">
-        </action>
-    </keybind>
-    <keybind key="W-space">
-      <action name="BreakChroot">
-        </action>
-    </keybind>
-    <keybind key="space">
-      <action name="BreakChroot">
-        </action>
-    </keybind>
-  </keybind>
-  <keybind key="W-Left">
-    <action name="GoToDesktop">
-      <to>left</to>
-      <wrap>no</wrap>
-    </action>
-  </keybind>
-  <keybind key="W-h">
-    <action name="GoToDesktop">
-      <to>left</to>
-      <wrap>no</wrap>
-    </action>
-  </keybind>
-  <keybind key="W-Right">
-    <action name="GoToDesktop">
-      <to>right</to>
-      <wrap>no</wrap>
-    </action>
-  </keybind>
-  <keybind key="W-l">
-    <action name="GoToDesktop">
-      <to>right</to>
-      <wrap>no</wrap>
-    </action>
-  </keybind>
-  <keybind key="W-Up">
-    <action name="GoToDesktop">
-      <to>up</to>
-      <wrap>no</wrap>
-    </action>
-  </keybind>
-  <keybind key="W-k">
-    <action name="GoToDesktop">
-      <to>up</to>
-      <wrap>no</wrap>
-    </action>
-  </keybind>
-  <keybind key="W-Down">
-    <action name="GoToDesktop">
-      <to>down</to>
-      <wrap>no</wrap>
-    </action>
-  </keybind>
-  <keybind key="W-j">
-    <action name="GoToDesktop">
-      <to>down</to>
-      <wrap>no</wrap>
-    </action>
-  </keybind>
-  <keybind key="S-W-Left">
-    <action name="SendToDesktop">
-      <to>left</to>
-      <wrap>no</wrap>
-    </action>
-  </keybind>
-  <keybind key="S-W-Right">
-    <action name="SendToDesktop">
-      <to>right</to>
-      <wrap>no</wrap>
-    </action>
-  </keybind>
-  <keybind key="S-W-Up">
-    <action name="SendToDesktop">
-      <to>up</to>
-      <wrap>no</wrap>
-    </action>
-  </keybind>
-  <keybind key="S-W-Down">
-    <action name="SendToDesktop">
-      <to>down</to>
-      <wrap>no</wrap>
-    </action>
-  </keybind>
-  <keybind key="W-F1">
-    <action name="GoToDesktop">
-      <to>1</to>
-    </action>
-  </keybind>
-  <keybind key="W-F2">
-    <action name="GoToDesktop">
-      <to>2</to>
-    </action>
-  </keybind>
-  <keybind key="W-F3">
-    <action name="GoToDesktop">
-      <to>3</to>
-    </action>
-  </keybind>
-  <keybind key="W-F4">
-    <action name="GoToDesktop">
-      <to>4</to>
-    </action>
-  </keybind>
-  <keybind key="W-F5">
-    <action name="GoToDesktop">
-      <to>5</to>
-    </action>
-  </keybind>
-  <keybind key="W-F6">
-    <action name="GoToDesktop">
-      <to>6</to>
-    </action>
-  </keybind>
-  <keybind key="W-F7">
-    <action name="GoToDesktop">
-      <to>7</to>
-    </action>
-  </keybind>
-  <keybind key="W-d">
-    <action name="ToggleShowDesktop"/>
-  </keybind>
-  <!-- Keybindings for windows -->
-  <keybind key="W-Escape">
-    <action name="Lower"/>
-    <action name="FocusToBottom"/>
-    <action name="Unfocus"/>
-  </keybind>
-  <keybind key="W-e">
-    <action name="ShowMenu">
-      <menu>client-menu</menu>
-    </action>
-  </keybind>
-  <!-- Take a screenshot of the current window with gnome-screenshot when Alt+Print are pressed -->
-  <keybind key="W-Print">
-    <action name="Execute">
-      <command>gnome-screenshot -w</command>
-    </action>
-  </keybind>
-  <!-- Keybindings for window switching -->
-  <keybind key="A-Tab">
+  <keybind key="W-Tab">
     <action name="NextWindow">
       <finalactions>
         <action name="Focus"/>
@@ -217,10 +158,8 @@ END OF HEADER -->
       </finalactions>
     </action>
   </keybind>
-  <keybind key="C-A-Tab">
-    <action name="NextWindow">
-      <panels>yes</panels>
-      <desktop>yes</desktop>
+  <keybind key="W-S-Tab">
+    <action name="PreviousWindow">
       <finalactions>
         <action name="Focus"/>
         <action name="Raise"/>
@@ -228,31 +167,14 @@ END OF HEADER -->
       </finalactions>
     </action>
   </keybind>
-  <!-- Keybindings for window switching with the arrow keys -->
-  <keybind key="W-S-Right">
-    <action name="DirectionalCycleWindows">
-      <direction>right</direction>
-    </action>
-  </keybind>
-  <keybind key="W-S-Left">
-    <action name="DirectionalCycleWindows">
-      <direction>left</direction>
-    </action>
-  </keybind>
-  <keybind key="W-S-Up">
-    <action name="DirectionalCycleWindows">
-      <direction>up</direction>
-    </action>
-  </keybind>
-  <keybind key="W-S-Down">
-    <action name="DirectionalCycleWindows">
-      <direction>down</direction>
-    </action>
-  </keybind>
-  <!-- Launch gnome-screenshot when Print is pressed -->
-  <keybind key="Print">
+  <keybind key="XF86AudioRaiseVolume">
     <action name="Execute">
-      <command>gnome-screenshot</command>
+      <command>amixer -q sset Master 1+</command>
+    </action>
+  </keybind>
+  <keybind key="XF86AudioLowerVolume">
+    <action name="Execute">
+      <command>amixer -q sset Master 1-</command>
     </action>
   </keybind>
 </keyboard>

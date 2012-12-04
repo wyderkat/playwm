@@ -1,0 +1,2 @@
+#!/bin/sh
+obxprop | grep "^_OB_APP" | sed "s/_OB_APP_//" | sed "s/(UTF8_STRING)//"

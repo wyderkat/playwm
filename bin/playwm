@@ -31,6 +31,8 @@ fi
 
 update-playwm &> $LOG/update-playwm
 
+make -C "$DOT" markconfigured
+
 ln -sf "$DOT/theme" ~/.themes/PlayWM
 ln -sf "$DOT/fonts.conf" "$FONTS_CONF_D/playwm.fonts.conf"
 

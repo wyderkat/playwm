@@ -4,7 +4,7 @@
 # License: GPL-2
 ##
 
-VERSION=0.2
+VERSION=0.4
 VERSIONING=config/.versioning
 TARBALL=playwm_$(VERSION).orig.tar.gz
 PACKAGEDIR=playwm-$(VERSION)
@@ -13,7 +13,7 @@ DEBIAN=$(wildcard debian/*)
 CONFIGS=applications.openbox.xml autostart.openbox.sh fonts.conf keyboard.openbox.xml launch.bar.tint2rc Makefile menu.openbox.xml mouse.openbox.xml START.txt task.bar.tint2rc terminal.Xresources theme windows.openbox.xml
 CONFIGS_PRE=$(VERSIONING) $(addprefix config/,$(CONFIGS))
 ALL_CONFIGS=$(shell find config/ -type f )
-SRC=Makefile bin/playwm bin/update-playwm $(IMAGE) xsession/playwm.desktop applications/urxvt.desktop $(CONFIGS_PRE) $(DEBIAN) README INSTALL COPYING
+SRC=Makefile bin/playwm bin/update-playwm bin/identify_window bin/find_key_name $(IMAGE) xsession/playwm.desktop applications/urxvt.desktop $(CONFIGS_PRE) $(DEBIAN) README INSTALL COPYING
 
 
 prefix=/usr
@@ -38,6 +38,8 @@ dist: $(TARBALL)
 install: 
 	install -D -m 0755 bin/playwm $(DESTDIR)$(bindir)/playwm
 	install -D -m 0755 bin/update-playwm $(DESTDIR)$(bindir)/update-playwm
+	install -D -m 0755 bin/identify_window $(DESTDIR)$(bindir)/identify_window
+	install -D -m 0755 bin/find_key_name $(DESTDIR)$(bindir)/find_key_name
 	install -D -m 0644 image/logo48.png $(DESTDIR)$(pixmapsdir)/playwm.png
 	install -D -m 0644 image/logo32.xpm $(DESTDIR)$(pixmapsdir)/playwm.xpm
 	install -D -m 0644 image/wallpaper19201080.jpg $(DESTDIR)$(playwmlibdirimage)/wallpaper19201080.jpg
@@ -86,7 +88,7 @@ clean:
 
 # author testing environment
 
-MYCONFIGSPATCHES=autostart.openbox.sh launch.bar.tint2rc terminal.Xresources
+MYCONFIGSPATCHES=autostart.openbox.sh launch.bar.tint2rc terminal.Xresources applications.openbox.xml
 # update configs for development
 self:
 	@mkdir -p $(HOME)/.playwm

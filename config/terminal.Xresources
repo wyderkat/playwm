@@ -5,36 +5,52 @@
 ! Comments here begins with "!" sign.
 !
 ! Table of Contents:
-!   TODO - to be done
+!   1) GENERAL SETTINGS
+!   2) PLUGINS SETTINGS
+!   3) COLORS DEFINITIONS
 !
 ! Full documentation can be found by exectuting command 
 !  man urxvt
-! in the section RESOURCES
+! under the section RESOURCES
 !
 ! END OF HEADER
 
+!   1) GENERAL SETTINGS
+!======================
+! Terminal font, 
+URxvt*font: xft:Terminus:pixelsize=14
+! dont use bold fonts in terminal, set it the same like normal font
+URxvt*boldFont: xft:Terminus:pixelsize=14
+! use full color depth
 URxvt.depth: 32
+! background transparency (in brackets) and color
 URxvt.background: [65]#000000
 URxvt*foreground: #ffffff
+! icon to use for terminal window
 URxvt.iconFile: /usr/share/icons/Humanity/apps/128/terminal.svg
-! clickable urls
+! type of scroll bar 
+URxvt.scrollstyle: plain
+URxvt.scrollBar_right: true
+URxvt.thickness: 7
+! cursor type in terminal
+URxvt.cursorUnderline: false
+URxvt.cursorBlink: false
+
+
+
+!   2) PLUGINS SETTINGS
+!======================
+! clickable urls plugin
 URxvt.perl-ext-common:  default,matcher
 URxvt.urlLauncher:      /usr/bin/firefox
 URxvt.matcher.button:   1
 URxvt.colorUL: #4682B4
 
-URxvt.scrollstyle: plain
-URxvt.scrollBar_right: true
-URxvt.thickness: 7
-URxvt.cursorUnderline: true
-URxvt.cursorBlink: true
 
 
-URxvt*font: xft:Terminus:pixelsize=14
-! dont use bold fonts in terminal
-URxvt*boldFont: xft:Terminus:pixelsize=14
-
-
+!   3) COLORS DEFINITIONS
+!========================
+! Color scheme
 ! tangoesque scheme
 ! Black (not tango) + DarkGrey
 *color0:  #000000
@@ -61,11 +77,4 @@ URxvt*boldFont: xft:Terminus:pixelsize=14
 *color7:  #cccccc
 *color15: #ffffff
 
-
-! TODO
-! Xft.dpi: 96
-! Xft.antialias: 1
-! Xft.hinting:    1
-! Xft.hintstyle:  hintfull
-! Xft.rgba:       rgb
 

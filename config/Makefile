@@ -1,13 +1,16 @@
+RE_FILES=.reconf_openbox_FLAG .reconf_tint2_FLAG .reconf_terminal_FLAG .restart_openbox_FLAG
+
+.PHONY: all reconf clean markconfigured
+
 all: reconf
 
-
-reconf: .reconf_openbox_FLAG .reconf_tint2_FLAG .reconf_terminal_FLAG
+reconf: $(RE_FILES)
 
 .reconf_tint2_FLAG: task.bar.tint2rc launch.bar.tint2rc
 	killall -USR1 tint2
 	touch $@
 
-.reconf_openbox_FLAG: windows.openbox.xml menu.openbox.xml 
+.reconf_openbox_FLAG: applications.openbox.xml keyboard.openbox.xml menu.openbox.xml mouse.openbox.xml windows.openbox.xml
 	killall -USR2 openbox
 	touch $@
 
@@ -18,11 +21,15 @@ reconf: .reconf_openbox_FLAG .reconf_tint2_FLAG .reconf_terminal_FLAG
 # this doesn't work for launching applications
 # We need to exit and start again PlayWM
 .restart_openbox_FLAG: autostart.openbox.sh
-	killall -USR1 openbox
-	touch $@
+	#killall -USR1 openbox
+	@echo "File autostart.openbox.sh has changed so you need to restart your session."
+	@echo "Please logout/login again if you want changes work."
+
+
+markconfigured: 
+	touch $(RE_FILES)
 
 clean:
-	rm -f .reconf_openbox_FLAG .reconf_tint2_FLAG .restart_openbox_FLAG
+	rm -f $(RE_FILES)
 
 
-.PHONY: reconf clean

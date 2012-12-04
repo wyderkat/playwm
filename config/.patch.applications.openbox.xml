@@ -1,0 +1,9 @@
+39a40,47
+>   <application name="evolution">
+>     <desktop>1</desktop>
+>     <position force="no">
+>       <x>0</x>
+>       <y>0</y>
+>     </position>
+>     <maximized>Vertical</maximized>
+>   </application>
