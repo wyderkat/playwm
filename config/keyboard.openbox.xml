@@ -51,6 +51,9 @@ END OF HEADER -->
 <keyboard>
 <!--   4) EXAMPLE -->
 
+  <keybind key="W-z">
+    <action name="Execute"> <command>urxvt</command> </action>
+  </keybind>
   <keybind key="W-space">
     <action name="ToggleMaximize"> </action>
   </keybind>

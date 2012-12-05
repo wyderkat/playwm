@@ -9,6 +9,7 @@ Homepage: http://www.cofoh.com/playwm/
 Package: playwm
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, feh, xcompmgr, tint2, volumeicon-alsa, openbox, menu, rxvt-unicode, xfonts-terminus
-Description: Window Manager for playing with it's configuration.
- Transparent. 
- Homepage: http://www.cofoh.com/playwm/
+Homepage: http://www.cofoh.com/playwm/
+Description: PlayWM is a window manager which was intended to play with it's configuration. 
+  This way every curious user, not only advanced linux geeks, can change how looks and behave his/her desktop and windows on it.
+  How to play? After staring PlayWM first time, go to ~/.playwm directory and read START.txt file.

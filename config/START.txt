@@ -60,10 +60,8 @@ Very important for PlayWM is terminal. By default we use Urxvt terminal. In
 ->  terminal.Xresources
 you will find options to tune it.
 
-Probably most complicated is look/theme for Openbox application. Go to 
-direcotry this time:
--> theme
-and find text files and images there which can change look of window manager.
+Probably most complicated is look/theme for Openbox application. Start from here:
+-> theme/openbox-3/themerc
 
 File
 -> fonts.conf 

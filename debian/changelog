@@ -1,3 +1,9 @@
+playwm (0.4-1) precise; urgency=low
+
+  * Openbox window theme. 
+
+ -- Tomasz Wyderka <wyderkat@cofoh.com>  Thu, 06 Dec 2012 00:58:43 +0700
+
 playwm (0.3-1) precise; urgency=low
 
   * Keyboard and mouse settings and documentation.
