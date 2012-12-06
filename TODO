@@ -1,7 +1,5 @@
 *) Documentation. 
-Theme,
-Menu
-windows
+windows - zmienic nazwe na inetrnal czy cos, poustawiac
 fonts
 
 *) Gtk theme
@@ -11,9 +9,6 @@ fonts
 *) Check pisownia
 
 *) Zrozumiec mouse bindings i opisac
-
-
-
 
 
 

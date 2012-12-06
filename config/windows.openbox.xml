@@ -2,8 +2,6 @@
 
 <!-- MUST TO READ - HEADER
 
- In this file you can find all keys bindings. 
-
  Table of Contents:
    TODO - to be done
 
@@ -20,43 +18,42 @@ END OF HEADER -->
     <screen_edge_strength>20</screen_edge_strength>
   </resistance>
   <focus>
-    <focusNew>yes</focusNew>
     <!-- always try to focus new windows when they appear. other rules do
        apply -->
-    <followMouse>no</followMouse>
+    <focusNew>yes</focusNew>
     <!-- move focus to a window when you move the mouse into it -->
-    <focusLast>yes</focusLast>
+    <followMouse>no</followMouse>
     <!-- focus the last used window when changing desktops, instead of the one
        under the mouse pointer. when followMouse is enabled -->
-    <underMouse>no</underMouse>
+    <focusLast>yes</focusLast>
     <!-- move focus under the mouse, even when the mouse is not moving -->
-    <focusDelay>200</focusDelay>
+    <underMouse>no</underMouse>
     <!-- when followMouse is enabled, the mouse must be inside the window for
        this many milliseconds (1000 = 1 sec) before moving focus to it -->
-    <raiseOnFocus>no</raiseOnFocus>
+    <focusDelay>200</focusDelay>
     <!-- when followMouse is enabled, and a window is given focus by moving the
        mouse into it, also raise the window -->
+    <raiseOnFocus>no</raiseOnFocus>
   </focus>
   <placement>
-    <policy>Smart</policy>
     <!-- 'Smart' or 'UnderMouse' -->
-    <center>yes</center>
+    <policy>Smart</policy>
     <!-- whether to place windows in the center of the free area found or
        the top left corner -->
-    <monitor>Primary</monitor>
+    <center>yes</center>
     <!-- with Smart placement on a multi-monitor system, try to place new windows
        on: 'Any' - any monitor, 'Mouse' - where the mouse is, 'Active' - where
        the active window is, 'Primary' - only on the primary monitor -->
-    <primaryMonitor>1</primaryMonitor>
+    <monitor>Primary</monitor>
     <!-- The monitor where Openbox should place popup dialogs such as the
        focus cycling popup, or the desktop switch popup.  It can be an index
        from 1, specifying a particular monitor.  Or it can be one of the
        following: 'Mouse' - where the mouse is, or
                   'Active' - where the active window is -->
+    <primaryMonitor>1</primaryMonitor>
   </placement>
   <theme>
     <name>PlayWM</name>
-    <titleLayout>NLIMC</titleLayout>
     <!--
       available characters are NDSLIMC, each can occur at most once.
       N: window icon
@@ -67,6 +64,7 @@ END OF HEADER -->
       S: shade (roll up/down)
       D: omnipresent (on all desktops).
   -->
+    <titleLayout>NLIMC</titleLayout>
     <keepBorder>yes</keepBorder>
     <animateIconify>yes</animateIconify>
     <font place="ActiveWindow">

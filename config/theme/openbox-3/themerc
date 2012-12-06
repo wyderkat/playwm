@@ -1,99 +1,159 @@
 # MUST TO READ - HEADER
 #
-# PlayWM theme based on Phoenix theme by lastchancetosee
-# Documentation on OpenBox themes can be found on the OpenBox wiki
-# http://openbox.org/wiki/Help:Themes
+# PlayWM Openbox theme 
+#   (based on Phoenix theme by http://lastchancetosee.deviantart.com/)
 #
 # Table of Contents:
+#   1) TEXTURES - BACKGROUNDS
+#      Main build elements
+#   2) SHADOW TEXT
+#      Some text properties
+#   3) GENERAL SETTINGS
+#      Very general.
+#   4) TITLEBARS
+#      On top of the window.
+#   5) BUTTONS ON TITLEBAR
+#      Check out also files *xbm in this theme directory
+#   6) HANDLE
+#      Decoration on the bottom.
+#   7) GRIPS
+#      Decorations on the left and ride side of handle.
+#   8) OSD
+#      Switching windows and desktops boxes.
+#   9) MENU
+# 
+# Full documentation can be found here:
+#   http://openbox.org/wiki/Help:Themes
+# And you probably need to consult it if you are doing something bigger.
 #
 # END OF HEADER
 
-# Windows
-# Window geometry
+
+#   1) TEXTURES - BACKGROUNDS
+#
+# Background of every element can be set up using textures. 
+# You can use such textures:
+#  A) Inherited - if you want element get texture from it's parent use Parentrelative work.
+#     (Not every element can do this) 
+#     Example:
+#       window.active.label.bg: Parentrelative
+#  B) Solid - Example:
+#       menu.items.bg:       Solid
+#       menu.items.bg.color: #f8f5f2 
+#  C) Gradient - using one of gradient types:
+#       Diagonal CrossDiagonal Pyramid Horizontal MirrorHorizontal Vertical SplitVertical
+#     Example: 
+#       menu.title.bg:         Gradient Vertical
+#       menu.title.bg.color:   #658fb5
+#       menu.title.bg.colorTo: #4d6982
+#  B&C) Borders - additionaly for Solid and Gradient textures you can specify border type:
+#       Flat, Raised, Sunken, Border (or "Flat Border")
+#       Flat means no border, but "Flat Border" or just "Border" means flat border:)
+#       Example: 
+#         window.active.button.unpressed.bg:              Gradient Vertical Flat Border
+#         window.active.button.unpressed.bg.border.color: #3d4c5a 
+#  B&C) Interlaced - Interlaced textures have a solid line drawn horizontally every second row
+#       Example:
+#         window.inactive.title.bg: Solid Flat Interlaced
+#         window.inactive.title.bg.color: #f5f5f5
+#         window.inactive.title.bg.interlace.color: #f6f6f6
+
+#   2) SHADOW TEXT
+#
+# Text font can has shadow. You can control it by these options:
+#  - shadow: y (yes) or n (no)
+#  - shadowtint: from -100 (white 100% opacity) to 100 (black 100% opacity),
+#    middle value whihc is 0 will be totally transparent
+#  - shadowoffset: positive number means how many pixels to right and bottom shaddow will 
+#    reach. Negative number mean to left and up corner. 
+# Example:
+#  window.active.label.text.font:shadow=y:shadowtint=70:shadowoffset=1
+#
+# Only  *.font elements can take shadow parameters.
+
+
+#   3) GENERAL SETTINGS
+#
+# global padding
 padding.width: 1
+# global border
 border.width: 1
+# application padding
 window.client.padding.width: 0
 window.client.padding.height: 0
-window.handle.width: 0
-
-# Border colors
+# window border colors
 window.active.border.color: #cfcfcf
 window.inactive.border.color: #cfcfcf
+# window border colors but inside decorations (titlebar, handle, etc)
 window.active.client.color: #cfcfcf
 window.inactive.client.color: #3E3C3A
-window.active.title.separator.color:  #565656
-window.inactive.title.separator.color: #565656
 
-# Text shadows
-window.active.label.text.font: shadow=n
-window.inactive.label.text.font: shadow=n
 
-# Window title justification
-window.label.text.justify: right
-
-# Active window
+#   4) TITLEBARS
+#
 window.active.title.bg: Flat Gradient Vertical
 window.active.title.bg.color: #768289
 window.active.title.bg.colorTo: #010101
-window.active.label.bg: Parentrelative
-window.active.label.text.color: #fafafa
-
-window.active.handle.bg: Flat Gradient Vertical
-window.active.handle.bg.color: #3E3C3A
-window.active.handle.bg.colorTo: #3E3C3A
-
-window.active.grip.bg: Flat Solid
-window.active.grip.bg.color: #3E3C3A
-
-
-window.active.button.unpressed.bg: ParentRelative
-window.active.button.unpressed.image.color: #ffffff
-
-window.active.button.pressed.bg: ParentRelative
-window.active.button.pressed.image.color: #ffffff
-
-window.active.button.disabled.bg: ParentRelative
-indow.active.button.disabled.image.color: #576265
-
-window.active.button.toggled.bg: ParentRelative
-window.active.button.toggled.image.color: #fbd3a7
-
-window.active.button.hover.bg: ParentRelative
-window.active.button.hover.image.color: #ffffff
-
-# Inactive windows
 window.inactive.title.bg: Flat Gradient Vertical
 window.inactive.title.bg.color: #222222
 window.inactive.title.bg.colorTo: #565656
-
+# separator is located between title bar and app window
+window.active.title.separator.color:  #565656
+window.inactive.title.separator.color: #565656
+#
+window.label.text.justify: center
+window.active.label.bg: Parentrelative
+window.active.label.text.color: #fafafa
 window.inactive.label.bg: Parentrelative
 window.inactive.label.text.color: #bbbbbb
+window.active.label.text.font: shadow=n
+window.inactive.label.text.font: shadow=n
 
+#   5) BUTTONS ON TITLEBAR
+#
+#  Please check out directory where this file is located.
+#  You can find there files (*.xbm) for shapes of buttons.
+window.active.button.unpressed.bg: ParentRelative
+window.active.button.unpressed.image.color: #ffffff
+window.active.button.pressed.bg: ParentRelative
+window.active.button.pressed.image.color: #ffffff
+window.active.button.disabled.bg: ParentRelative
+window.active.button.disabled.image.color: #576265
+window.active.button.toggled.bg: ParentRelative
+window.active.button.toggled.image.color: #fbd3a7
+window.active.button.hover.bg: ParentRelative
+window.active.button.hover.image.color: #ffffff
+window.inactive.button.unpressed.bg: ParentRelative
+window.inactive.button.unpressed.image.color: #576265
+window.inactive.button.pressed.bg: ParentRelative
+window.inactive.button.pressed.image.color: #576265
+window.inactive.button.disabled.bg: ParentRelative
+window.inactive.button.disabled.image.color: #576265
+window.inactive.button.toggled.bg: ParentRelative
+window.inactive.button.toggled.image.color: #576265
+window.inactive.button.hover.bg: ParentRelative
+window.inactive.button.hover.image.color: #576265
+
+#   6) HANDLE
+#
+window.handle.width: 0
+window.active.handle.bg: Flat Gradient Vertical
+window.active.handle.bg.color: #3E3C3A
+window.active.handle.bg.colorTo: #3E3C3A
 window.inactive.handle.bg: Flat Gradient Vertical
 window.inactive.handle.bg.color: #3E3C3A
 window.inactive.handle.bg.colorTo: #3E3C3A
 
+#   7) GRIPS
+#
+window.active.grip.bg: Flat Solid
+window.active.grip.bg.color: #3E3C3A
 window.inactive.grip.bg: Flat Gradient Vertical
 window.inactive.grip.bg.color: #3E3C3A
 window.inactive.grip.bg.colorTo: #3E3C3A
 
-window.inactive.button.unpressed.bg: ParentRelative
-window.inactive.button.unpressed.image.color: #576265
-
-window.inactive.button.pressed.bg: ParentRelative
-window.inactive.button.pressed.image.color: #576265
-
-window.inactive.button.disabled.bg: ParentRelative
-window.inactive.button.disabled.image.color: #576265
-
-window.inactive.button.toggled.bg: ParentRelative
-window.inactive.button.toggled.image.color: #576265
-
-window.inactive.button.hover.bg: ParentRelative
-window.inactive.button.hover.image.color: #576265
-
-
-# OSD
+#   8) OSD
+#
 osd.border.width: 1
 osd.border.color:  #262729
 
@@ -111,14 +171,12 @@ osd.hilight.bg.colorTo: #527A9D
 osd.unhilight.bg: flat solid
 osd.unhilight.bg.color: #62696A
 
-
-# Menu
-# Menu:Geometry
+#   9) MENU
+#
 menu.border.width: 1
 menu.border.color: #ffffff
 menu.overlap.x: -5
 menu.overlap.y: -1
-# Menu:Title
 menu.title.bg: solid flat
 menu.title.bg.color: #111111
 menu.title.text.color: #c3c3c3
@@ -133,3 +191,4 @@ menu.items.active.bg.color: #B2C7D0
 menu.items.active.bg.colorTo: #527A9D
 menu.items.active.text.color: #000000
 menu.items.active.disabled.text.color: #565656
+
