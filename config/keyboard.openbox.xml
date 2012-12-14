@@ -54,6 +54,9 @@ END OF HEADER -->
   <keybind key="W-z">
     <action name="Execute"> <command>urxvt</command> </action>
   </keybind>
+  <keybind key="W-x">
+    <action name="Execute"> <command>firefox</command> </action>
+  </keybind>
   <keybind key="W-space">
     <action name="ToggleMaximize"> </action>
   </keybind>

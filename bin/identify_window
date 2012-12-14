@@ -1,2 +1,3 @@
 #!/bin/sh
-obxprop | grep "^_OB_APP" | sed "s/_OB_APP_//" | sed "s/(UTF8_STRING)//"
+# head -15 is needed because after 15 lines obxprop stops for 1s and prints not needed info 
+obxprop | head -15 | grep "^_OB_APP" | sed "s/_OB_APP_//" | sed "s/(UTF8_STRING)//"

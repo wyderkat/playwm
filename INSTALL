@@ -6,7 +6,7 @@ INSTALLATION / BUILDING instructions:
     cd playwm-0.2
 *) Compile 
     make
-*) Install (as a root)
+*) Install (as root)
     make install
 *) Install depending software: feh, xcompmgr, tint2, volumeicon-alsa, openbox, menu, rxvt-unicode, xfonts-terminus
    This step is system depending.

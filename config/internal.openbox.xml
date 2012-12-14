@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- MUST TO READ - HEADER
+
+ This file contains internal configuration of Openbox.
+
+ Table of Contents:
+   1) DESKTOPS
+      How many and what names
+   2) MENU CONFIGURATION
+      Configuration for the menu from file
+        ~/.playwm/menu.openbox.xml
+   3) THEME CONFIGURATION
+      Configuration (not look) of main theme,
+   4) WINDOWS FOCUS
+   5) WINDOWS PLACEMENT AND RESIZING OPTIONS
+   6) DOCK APPLICATIONS PLACEMENT
+      
+ Full documentation can be found here:
+   http://openbox.org/wiki/Help:Configuration
+
+END OF HEADER -->
+
+<openbox_config xmlns:xi="http://www.w3.org/2001/XInclude">
+
+<!--   1) DESKTOPS -->
+  <desktops>
+    <number>7</number>
+    <firstdesk>1</firstdesk>
+    <names>
+      <name>a1</name>
+      <name>b2</name>
+      <name>c3</name>
+      <name>d4</name>
+      <name>e5</name>
+      <name>f6</name>
+      <name>g7</name>
+    </names>
+    <!-- The number of milliseconds to show the popup for when switching
+       desktops.  Set this to 0 to disable the popup. -->
+    <popupTime>875</popupTime>
+  </desktops>
+
+<!--   2) MENU CONFIGURATION -->
+  <menu>
+    <!-- if a press-release lasts longer than this setting (in milliseconds), the
+       menu is hidden again -->
+    <hideDelay>200</hideDelay>
+    <!-- center submenus vertically about the parent entry -->
+    <middle>no</middle>
+    <!-- time to delay before showing a submenu after hovering over the parent
+       entry.
+       if this is a negative value, then the delay is infinite and the
+       submenu will not be shown until it is clicked on -->
+    <submenuShowDelay>100</submenuShowDelay>
+    <!-- time to delay before hiding a submenu when selecting another
+       entry in parent menu
+       if this is a negative value, then the delay is infinite and the
+       submenu will not be hidden until a different submenu is opened -->
+    <submenuHideDelay>400</submenuHideDelay>
+    <!-- controls if icons appear in the client-list-(combined-)menu -->
+    <applicationIcons>yes</applicationIcons>
+    <!-- show the manage desktops section in the client-list-(combined-)menu -->
+    <manageDesktops>yes</manageDesktops>
+    <file>/var/lib/openbox/debian-menu.xml</file>
+    <file>~/.playwm/menu.openbox.xml</file>
+  </menu>
+
+<!--   3) THEME CONFIGURATION -->
+  <theme>
+    <!-- What button on title bar. 
+      Available characters are NDSLIMC, each can occur at most once.
+      N: window icon
+      L: window label (AKA title).
+      I: iconify
+      M: maximize
+      C: close
+      S: shade (roll up/down)
+      D: omnipresent (on all desktops).
+  -->
+    <titleLayout>NLIMC</titleLayout>
+    <!-- animate icons process ? --> 
+    <animateIconify>yes</animateIconify>
+    <font place="ActiveWindow">
+      <name>Arial</name>
+      <!-- font size in points -->
+      <size>10</size>
+      <!-- 'bold' or 'normal' -->
+      <weight>Normal</weight>
+      <!-- 'italic' or 'normal' -->
+      <slant>Italic</slant>
+    </font>
+    <font place="InactiveWindow">
+      <name>Arial</name>
+      <size>10</size>
+      <weight>Normal</weight>
+      <slant>Normal</slant>
+    </font>
+    <font place="MenuHeader">
+      <name>Ubuntu</name>
+      <size>10</size>
+      <weight>Normal</weight>
+      <slant>Bold</slant>
+    </font>
+    <font place="MenuItem">
+      <name>Ubuntu</name>
+      <size>10</size>
+      <weight>Normal</weight>
+      <slant>Normal</slant>
+    </font>
+    <font place="ActiveOnScreenDisplay">
+      <name>Arial</name>
+      <size>10</size>
+      <weight>Bold</weight>
+      <slant>Normal</slant>
+    </font>
+    <font place="InactiveOnScreenDisplay">
+      <name>Arial</name>
+      <size>10</size>
+      <weight>Normal</weight>
+      <slant>Normal</slant>
+    </font>
+    <!-- Theme for Openbox-3 -->
+    <name>PlayWM</name>
+    <keepBorder>yes</keepBorder>
+  </theme>
+
+<!--   4) WINDOWS FOCUS -->
+  <focus>
+    <!-- always try to focus new windows when they appear -->
+    <focusNew>yes</focusNew>
+    <!-- move focus to a window when you move the mouse into it -->
+    <followMouse>no</followMouse>
+    <!-- focus the last used window when changing desktops, instead of the one
+       under the mouse pointer. when followMouse is enabled -->
+    <focusLast>yes</focusLast>
+    <!-- move focus under the mouse, even when the mouse is not moving -->
+    <underMouse>no</underMouse>
+    <!-- when followMouse is enabled, the mouse must be inside the window for
+       this many milliseconds (1000 = 1 sec) before moving focus to it -->
+    <focusDelay>200</focusDelay>
+    <!-- when followMouse is enabled, and a window is given focus by moving the
+       mouse into it, also raise the window -->
+    <raiseOnFocus>no</raiseOnFocus>
+  </focus>
+
+<!--   5) WINDOWS PLACEMENT AND RESIZING OPTIONS -->
+  <placement>
+    <!-- 'Smart' or 'UnderMouse' -->
+    <policy>Smart</policy>
+    <!-- whether to place windows in the center of the free area found or
+       the top left corner -->
+    <center>yes</center>
+    <!-- with Smart placement on a multi-monitor system, try to place new windows
+       on: 'Any' - any monitor, 'Mouse' - where the mouse is, 'Active' - where
+       the active window is, 'Primary' - only on the primary monitor -->
+    <monitor>Primary</monitor>
+    <!-- The monitor where Openbox should place popup dialogs such as the
+       focus cycling popup, or the desktop switch popup.  It can be an index
+       from 1, specifying a particular monitor.  Or it can be one of the
+       following: 'Mouse' - where the mouse is, or
+                  'Active' - where the active window is -->
+    <primaryMonitor>1</primaryMonitor>
+  </placement>
+  <resistance>
+    <!-- how many pixels between windows before they will overlap -->
+    <strength>10</strength>
+    <!-- how many pixels between windows and screen edges before they will overlap -->
+    <screen_edge_strength>20</screen_edge_strength>
+  </resistance>
+  <resize>
+    <drawContents>yes</drawContents>
+    <!-- 'Always', 'Never', or 'Nonpixel' (windows resizing by more than one pixel at the time) -->
+    <popupShow>Nonpixel</popupShow>
+    <!-- 'Center', 'Top', or 'Fixed' -->
+    <popupPosition>Center</popupPosition>
+    <popupFixedPosition>
+      <!-- these are used if popupPosition is set to 'Fixed' -->
+      <x>10</x>
+      <!-- positive number for distance from left edge, negative number for
+         distance from right edge, or 'Center' -->
+      <y>10</y>
+      <!-- positive number for distance from top edge, negative number for
+         distance from bottom edge, or 'Center' -->
+    </popupFixedPosition>
+  </resize>
+  <!-- Extra margins for the desktop -->
+  <margins>
+    <top>0</top>
+    <bottom>0</bottom>
+    <left>0</left>
+    <right>0</right>
+  </margins>
+
+<!--   6) DOCK APPLICATIONS PLACEMENT -->
+  <!-- for dockapp applictions (http://dockapps.windowmaker.org/) -->
+  <dock>
+    <!-- (Top|Bottom)(Left|Right|)|Top|Bottom|Left|Right|Floating -->
+    <position>TopLeft</position>
+    <floatingX>0</floatingX>
+    <floatingY>0</floatingY>
+    <noStrut>no</noStrut>
+    <!-- 'Above', 'Normal', or 'Below' -->
+    <stacking>Above</stacking>
+    <!-- 'Vertical' or 'Horizontal' -->
+    <direction>Vertical</direction>
+    <autoHide>no</autoHide>
+    <!-- in milliseconds (1000 = 1 second) -->
+    <hideDelay>300</hideDelay>
+    <!-- in milliseconds (1000 = 1 second) -->
+    <showDelay>300</showDelay>
+    <!-- 'Left', 'Middle', 'Right' -->
+    <moveButton>Middle</moveButton>
+  </dock>
+
+  <xi:include href="keyboard.openbox.xml"/>
+  <xi:include href="mouse.openbox.xml"/>
+  <xi:include href="applications.openbox.xml"/>
+</openbox_config>

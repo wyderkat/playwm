@@ -136,7 +136,7 @@ panel_background_id = 1
 #   S to show Systray (also called notification area)
 #   B to show Battery status
 #   C to show Clock
-panel_items = TSC
+panel_items = TSCB
 # How maximized windows should look:
 #   follow_size - adjust size to show panel too, when panel autohided, window follow it (resize) 
 #   minimum - window always take space from panel
@@ -263,14 +263,15 @@ clock_rclick_command = orage
 
 #   7) BATTERY CONFIGURATION
 
-battery = 0
+battery = 1
 battery_low_status = 10
-battery_low_cmd = notify-send "battery low"
+battery_low_cmd = notify-send "Low battery"
+# what percent make battery to hide
 battery_hide = 98
 bat1_font = sans 8
 bat2_font = sans 6
 battery_font_color = #FFFFFF 74
-battery_padding = 1 0
+battery_padding = 4 0
 battery_background_id = 0
 
 # THE END

@@ -1,5 +1,5 @@
-39a40,47
->   <application name="evolution">
+37a38,45
+>   <application name="evolution" type="normal" title="Mail - Evolution">
 >     <desktop>1</desktop>
 >     <position force="no">
 >       <x>0</x>
@@ -7,3 +7,5 @@
 >     </position>
 >     <maximized>Vertical</maximized>
 >   </application>
+40d47
+< 

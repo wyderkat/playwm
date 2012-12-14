@@ -2,7 +2,7 @@
 
 DOT="$HOME/.playwm"
 AUTOSTART="$DOT/autostart.openbox.sh"
-OPENBOX_CONF="$DOT/windows.openbox.xml"
+OPENBOX_CONF="$DOT/internal.openbox.xml"
 LOG="$DOT/log"
 THEMES="$HOME/.themes"
 FONTS_CONF_D="$HOME/.fonts.conf.d"

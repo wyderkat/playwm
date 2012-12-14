@@ -4,13 +4,13 @@
 # License: GPL-2
 ##
 
-VERSION=0.5
+VERSION=0.7
 VERSIONING=config/.versioning
 TARBALL=playwm_$(VERSION).orig.tar.gz
 PACKAGEDIR=playwm-$(VERSION)
 IMAGE=$(wildcard image/*)
 DEBIAN=$(wildcard debian/*)
-CONFIGS=applications.openbox.xml autostart.openbox.sh fonts.conf keyboard.openbox.xml launch.bar.tint2rc Makefile menu.openbox.xml mouse.openbox.xml START.txt task.bar.tint2rc terminal.Xresources theme windows.openbox.xml
+CONFIGS=applications.openbox.xml autostart.openbox.sh fonts.conf keyboard.openbox.xml launch.bar.tint2rc Makefile menu.openbox.xml mouse.openbox.xml START.txt task.bar.tint2rc terminal.Xresources theme internal.openbox.xml
 CONFIGS_PRE=$(VERSIONING) $(addprefix config/,$(CONFIGS))
 ALL_CONFIGS=$(shell find config/ -type f )
 SRC=Makefile bin/playwm bin/update-playwm bin/identify_window bin/find_key_name $(IMAGE) xsession/playwm.desktop applications/urxvt.desktop $(CONFIGS_PRE) $(DEBIAN) README INSTALL COPYING

@@ -1,8 +1,10 @@
-*) Documentation. 
-windows - zmienic nazwe na inetrnal czy cos, poustawiac
-fonts
+*) More funny!
 
-*) Gtk theme
+*) terminal icon test @tung and oothers
+
+*) debian package, apache redirect link
+
+*) Gtk theme - doc about gtkrc, archlinux
 
 *) Change feh maybe to something else.
 
@@ -20,4 +22,6 @@ Uzaleznic ludzi od dobrej lektury konfiguracji.
 
 TODEVELOP:
 - cliking animation
+- transparent titlebars in openbox
+  https://github.com/chjj/compton
 

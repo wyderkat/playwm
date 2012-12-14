@@ -54,7 +54,7 @@ to set up for example what desktop your mail client should pop up.
 
 
 For more advanced/internal part of window manager go to :
-->  windows.openbox.xml
+->  internal.openbox.xml
 
 Very important for PlayWM is terminal. By default we use Urxvt terminal. In
 ->  terminal.Xresources

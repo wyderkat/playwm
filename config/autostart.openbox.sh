@@ -15,6 +15,7 @@ feh --bg-center  /usr/lib/playwm/image/wallpaper19201080.jpg
 xcompmgr   &> $LOG/xcompmgr &
 # xcompmgr has to be started before next applications with a slight delay
 sleep 1
+# Keyboard_layout_example: setxkbmap 'pl,th' -option 'grp:menu_toggle'
 # top panel 
 tint2 -c ~/.playwm/task.bar.tint2rc  &> $LOG/task.bar  &
 # right panel

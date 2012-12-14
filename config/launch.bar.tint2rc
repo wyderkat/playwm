@@ -50,9 +50,9 @@ strut_policy = minimum
 #   3) LAUNCHER CONFIGURATION
 #launcher_background_id = 2
 #launcher_icon_size = number : Set the launcher icon size to number.
-launcher_icon_asb = 100 -30 0
+launcher_icon_asb = 100 -60 0
 launcher_tooltip = 1
-launcher_icon_theme = gnome
+launcher_icon_theme = Humanity
 launcher_padding = 5 0 7
 
 # tooltips for launcher icons? 

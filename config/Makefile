@@ -10,7 +10,7 @@ reconf: $(RE_FILES)
 	killall -USR1 tint2
 	touch $@
 
-.reconf_openbox_FLAG: applications.openbox.xml keyboard.openbox.xml menu.openbox.xml mouse.openbox.xml windows.openbox.xml
+.reconf_openbox_FLAG: applications.openbox.xml keyboard.openbox.xml menu.openbox.xml mouse.openbox.xml internal.openbox.xml
 	killall -USR2 openbox
 	touch $@
 

@@ -60,6 +60,10 @@
 
 #   2) SHADOW TEXT
 #
+# NOTE:
+#   Fonts can be change only from ~/.playwm/internal.openbox.xml file under
+#   THEME section. 
+#
 # Text font can has shadow. You can control it by these options:
 #  - shadow: y (yes) or n (no)
 #  - shadowtint: from -100 (white 100% opacity) to 100 (black 100% opacity),
@@ -91,6 +95,10 @@ window.inactive.client.color: #3E3C3A
 
 #   4) TITLEBARS
 #
+# NOTE:
+#   Buttons order on title bar can be change only from 
+#   ~/.playwm/internal.openbox.xml file under THEME section. 
+#
 window.active.title.bg: Flat Gradient Vertical
 window.active.title.bg.color: #768289
 window.active.title.bg.colorTo: #010101
@@ -106,7 +114,9 @@ window.active.label.bg: Parentrelative
 window.active.label.text.color: #fafafa
 window.inactive.label.bg: Parentrelative
 window.inactive.label.text.color: #bbbbbb
-window.active.label.text.font: shadow=n
+# this is not shadow, just trick to fix titlebar buttons bigger 
+# size than tilebar font. Openbox issue. 
+window.active.label.text.font: shadow=y:shadowtint=0:shadowoffset=6
 window.inactive.label.text.font: shadow=n
 
 #   5) BUTTONS ON TITLEBAR
