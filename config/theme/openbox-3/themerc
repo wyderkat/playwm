@@ -99,19 +99,19 @@ window.inactive.client.color: #3E3C3A
 #   Buttons order on title bar can be change only from 
 #   ~/.playwm/internal.openbox.xml file under THEME section. 
 #
-window.active.title.bg: Flat Gradient Vertical
-window.active.title.bg.color: #768289
-window.active.title.bg.colorTo: #010101
-window.inactive.title.bg: Flat Gradient Vertical
-window.inactive.title.bg.color: #222222
-window.inactive.title.bg.colorTo: #565656
+window.active.title.bg: Flat Gradient Horizontal
+window.active.title.bg.color: #5F87AA
+window.active.title.bg.colorTo: #758387
+window.inactive.title.bg: Flat Gradient Horizontal
+window.inactive.title.bg.color: #565656
+window.inactive.title.bg.colorTo: #222222
 # separator is located between title bar and app window
 window.active.title.separator.color:  #565656
 window.inactive.title.separator.color: #565656
 #
-window.label.text.justify: center
+window.label.text.justify: left
 window.active.label.bg: Parentrelative
-window.active.label.text.color: #fafafa
+window.active.label.text.color: #C3CED1
 window.inactive.label.bg: Parentrelative
 window.inactive.label.text.color: #bbbbbb
 # this is not shadow, just trick to fix titlebar buttons bigger 
@@ -124,15 +124,16 @@ window.inactive.label.text.font: shadow=n
 #  Please check out directory where this file is located.
 #  You can find there files (*.xbm) for shapes of buttons.
 window.active.button.unpressed.bg: ParentRelative
-window.active.button.unpressed.image.color: #ffffff
+#window.active.button.unpressed.image.color: #527A9D
+window.active.button.unpressed.image.color: #B2C7D0
 window.active.button.pressed.bg: ParentRelative
-window.active.button.pressed.image.color: #ffffff
+window.active.button.pressed.image.color: #B2C7D0
 window.active.button.disabled.bg: ParentRelative
 window.active.button.disabled.image.color: #576265
 window.active.button.toggled.bg: ParentRelative
-window.active.button.toggled.image.color: #fbd3a7
+window.active.button.toggled.image.color: #B2C7D0
 window.active.button.hover.bg: ParentRelative
-window.active.button.hover.image.color: #ffffff
+window.active.button.hover.image.color: #B2C7D0
 window.inactive.button.unpressed.bg: ParentRelative
 window.inactive.button.unpressed.image.color: #576265
 window.inactive.button.pressed.bg: ParentRelative

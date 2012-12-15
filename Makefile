@@ -4,7 +4,7 @@
 # License: GPL-2
 ##
 
-VERSION=0.7
+VERSION=0.8
 VERSIONING=config/.versioning
 TARBALL=playwm_$(VERSION).orig.tar.gz
 PACKAGEDIR=playwm-$(VERSION)
