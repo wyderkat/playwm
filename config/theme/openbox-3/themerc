@@ -116,7 +116,7 @@ window.inactive.label.bg: Parentrelative
 window.inactive.label.text.color: #bbbbbb
 # this is not shadow, just trick to fix titlebar buttons bigger 
 # size than tilebar font. Openbox issue. 
-window.active.label.text.font: shadow=y:shadowtint=0:shadowoffset=6
+window.active.label.text.font: shadow=y:shadowtint=0:shadowoffset=2
 window.inactive.label.text.font: shadow=n
 
 #   5) BUTTONS ON TITLEBAR
@@ -168,9 +168,11 @@ window.inactive.grip.bg.colorTo: #3E3C3A
 osd.border.width: 1
 osd.border.color:  #262729
 
-osd.bg: flat gradient vertical border
+osd.bg: flat gradient Horizontal 
 osd.bg.color: #222222
 osd.bg.colorTo: #565656
+#osd.bg.color: #5F87AA
+#osd.bg.colorTo: #758387
 osd.bg.border.color: #D2E1E1
 osd.label.bg: parentrelative
 osd.label.text.color: #bbbbbb

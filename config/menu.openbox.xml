@@ -18,8 +18,8 @@ END OF HEADER -->
 
 <openbox_menu>
 
-<!-- root-menu is the hardcoded name of main menu,
-     Dont change it.  --> 
+<!-- root-menu is the hard-coded name of main menu,
+     Don't change it.  --> 
 <menu id="root-menu" label="PlayWM">
 
   <!-- item under menu -->

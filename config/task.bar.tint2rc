@@ -1,30 +1,28 @@
 # MUST TO READ - HEADER
 #
 # This is configuration of top panel in PlayWM. Top panel is located on the top
-# edge of screen and it looks like taskbar in windows. But name 'taskbar' is
-# used in this configuration file for somthing else, so lets call it Top Panel.
-#
-# As you can see comments here begin with # sign. Be carefull, only # characters
-# in 1st column of line start comments!
+# edge of the screen and it looks like taskbar in Windows. But name 'taskbar' is
+# used in this configuration for something else, so lets call it Top Panel.
 #
 # Table of Contents:
 #   1) BACKGROUNDS TEMPLATES
 #     Here we can find templates of shapes and colors which are used later for
-#     make beautiful look of panel
+#     make beautiful look of panel. You can postpone reading this section until 
+#     other option redirect you here.
 #   2) GENERAL (PANEL) CONFIGURATION
 #     These are general settings, like what and where should be shown 
 #   3) TASKBAR CONFIGURATION
-#     This is the widthest part of panel. it is a list of open applications 
+#     This is the widest part of the panel. It is a list of open applications 
 #     (called also tasks) 
 #   4) TASKS CONFIGURATION
 #     Configuration of single task (opened window/application) 
 #   5) SYSTEM TRAY CONFIGURATION
-#     System Tray is place where some application like skype, put their status
-#     icons. Here will be shown volume control. 
+#     System Tray is place where some application like Skype put their status
+#     icons. Here will be shown for example volume control. 
 #   6) CLOCK CONFIGURATION
-#     No comments here
+#     Obvious.
 #   7) BATTERY CONFIGURATION
-#     No comments here
+#     Obvious.
 #
 #
 # END OF HEADER
@@ -37,8 +35,8 @@
 # Every background template consist of 4 lines.
 # Every background template has an implicit (!) ID,
 # which are numbers starting from 1. 
-# For convienience we are writing id numbers in comments.
-# Later you can use these numbers to refere some background template
+# For convenience we are writing id numbers in comments.
+# Later you can use these numbers to refer background template definition.
 #
 
 # (id=1) panel_background_id (we will use id 1 in panel_background_id line) 
@@ -102,6 +100,18 @@ border_color = #000000 30
 
 # 2) GENERAL (PANEL) CONFIGURATION
 
+# panel_layer = (bottom,normal,top) 
+# Place panel under,together,on top of others windows.
+panel_layer = top
+# Which background definition to use (goto section BACKGROUNDS TEMPLATES)
+panel_background_id = 1
+# Items on panel and order:
+#   L to show Launcher
+#   T to show Taskbar
+#   S to show Systray (also called notification area)
+#   B to show Battery status
+#   C to show Clock
+panel_items = TSCB
 # draw this panel on all monitors if have more than one
 panel_monitor = all 
 # position panel on the screen
@@ -115,30 +125,18 @@ panel_monitor = all
 # is more important to control than 2nd, and vice versa
 panel_position = top center horizontal
 # Size: width height
-# We can use number, which mean pixels, or numbers with percent sign, which mean percentage of screen dimension
+# We can use numbers which mean pixels, or numbers with percent sign, which mean percentage of screen
 panel_size = 94% 30 
-# margins outsite panel size: horizontal_margin vertical_margion. horizontal_margin = 0 means all screen width
+# margins outside panel size: horizontal_margin vertical_margin. horizontal_margin = 0 means all screen width
 panel_margin = 0 1
-# padding (margins inside panel size) : horizontal vertical vertical_spaciong_between_elements
+# padding (margins inside panel size) : horizontal vertical vertical_spacing_between_elements
 panel_padding = 10 1 5 
 # put panel in WM dock
 panel_dock = 0
 # TODO?
 wm_menu = 0
-# panel_layer = (bottom,normal,top) 
-# Place panel under,together,on top of other windows.
-panel_layer = top
-# Which background definition to use (goto section BACKGROUNDS TEMPLATES)
-panel_background_id = 1
-# Items on panel and order:
-#   L to show Launcher
-#   T to show Taskbar
-#   S to show Systray (also called notification area)
-#   B to show Battery status
-#   C to show Clock
-panel_items = TSCB
 # How maximized windows should look:
-#   follow_size - adjust size to show panel too, when panel autohided, window follow it (resize) 
+#   follow_size - adjust size to show panel too, when panel autohide, window follow it (resize) 
 #   minimum - window always take space from panel
 #   none - 
 strut_policy = follow_size
@@ -152,15 +150,9 @@ autohide_hide_timeout = 2
 # Height of taskbar when autohided
 autohide_height = 4
 
-# Mouse
-mouse_middle = close
-mouse_right = none
-mouse_scroll_up = toggle
-mouse_scroll_down = iconify
-
 
 # 3) TASKBAR CONFIGURATION
-# Taskbar is sometimes called Pager
+# Taskbar is sometimes called a Pager
 
 # Mode:
 # multi_desktop - show all desktops with all windows
@@ -169,7 +161,7 @@ taskbar_mode = multi_desktop
 # Padding inside desktop
 # horizontal_padding vertical_padding horizontal_spacing
 taskbar_padding = 6 2 2
-# Which background definition to use (goto section BACKGROUNDS TEMPLATES)
+# Which background to use (goto section BACKGROUNDS TEMPLATES)
 taskbar_background_id = 2
 # Like above but for current desktop
 taskbar_active_background_id = 3
@@ -188,7 +180,15 @@ taskbar_name_active_font_color = #FFFFFF 100
 
 
 # 4) TASKS CONFIGURATION
-# how many time to blink when some window want to get attention
+
+# mouse bindings when clicked task on taskbar
+# possible values; (none, close, toggle, iconify, shade, toggle_iconify, maximize_restore, desktop_left, desktop_right, next_task, prev_task)
+mouse_middle = close
+mouse_right = none
+mouse_scroll_up = toggle
+mouse_scroll_down = iconify
+
+# how many times to blink when some window want to get attention
 urgent_nb_of_blink = 7
 # display task icon
 task_icon = 1
@@ -196,10 +196,10 @@ task_icon = 1
 task_text = 1
 # task text centered ? 
 task_centered = 0
-# width heigh
+# width high
 # width is used in horizontal panel
-# heigh in vertical
-# Value 0 meqans maximum
+# high in vertical
+# Value 0 means maximum
 task_maximum_size = 120 35
 # horizontal_padding vertical_padding
 task_padding = 4 1
@@ -219,8 +219,8 @@ task_iconified_font_color = #FFFFFF 68
 font_shadow = 0
 
 
-# Task Icons ASB = Alpha Saturation brigthness
-# Alpha from 0 to 100, Saturation -100 up to 100, brigthness too
+# Task Icons ASB = Alpha Saturation Brightness
+# Alpha from 0 to 100, Saturation -100 up to 100, Brightness -100 up to 100
 task_icon_asb = 100 -100 -30
 task_active_icon_asb = 100 0 0
 task_urgent_icon_asb = 100 0 0
@@ -232,9 +232,8 @@ task_tooltip = 1
 tooltip_padding = 2 2
 # time to activate tooltip
 tooltip_show_timeout = 0.7
-# time to desactivate tooltip
+# time to deactivate tooltip
 tooltip_hide_timeout = 0.3
-# NEXT
 tooltip_background_id = 9
 tooltip_font = sans 10
 tooltip_font_color = #000000 80
@@ -242,15 +241,19 @@ tooltip_font_color = #000000 80
 
 #   5) SYSTEM TRAY CONFIGURATION
 
+# do we need icons from application like Skype?
 systray = 1
 systray_padding = 0 4 5
 systray_sort = ascending
 systray_background_id = 0
 systray_icon_size = 16
+# Icons ASB = Alpha Saturation Brightness
 systray_icon_asb = 100 -50 0
 
 #   6) CLOCK CONFIGURATION
 
+# standard linux format of time
+# (sample definition here http://linux.die.net/man/3/strftime)
 time1_format = %H:%M
 time1_font = sans 8
 time2_format = %A %d %B
@@ -258,15 +261,17 @@ time2_font = sans 6
 clock_font_color = #FFFFFF 74
 clock_padding = 5 4
 clock_background_id = 8
+# command to execute when right mouse clicked
 clock_rclick_command = orage
 
 
 #   7) BATTERY CONFIGURATION
 
+# do we need battery indicator? 
 battery = 1
 battery_low_status = 10
 battery_low_cmd = notify-send "Low battery"
-# what percent make battery to hide
+# above what percent hide battery 
 battery_hide = 98
 bat1_font = sans 8
 bat2_font = sans 6

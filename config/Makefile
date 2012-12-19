@@ -1,4 +1,5 @@
 RE_FILES=.reconf_openbox_FLAG .reconf_tint2_FLAG .reconf_terminal_FLAG .restart_openbox_FLAG
+THEME_FILES=$(wildcard theme/openbox-3/*)
 
 .PHONY: all reconf clean markconfigured
 
@@ -10,7 +11,7 @@ reconf: $(RE_FILES)
 	killall -USR1 tint2
 	touch $@
 
-.reconf_openbox_FLAG: applications.openbox.xml keyboard.openbox.xml menu.openbox.xml mouse.openbox.xml internal.openbox.xml
+.reconf_openbox_FLAG: applications.openbox.xml keyboard.openbox.xml menu.openbox.xml mouse.openbox.xml internal.openbox.xml $(THEME_FILES)
 	killall -USR2 openbox
 	touch $@
 

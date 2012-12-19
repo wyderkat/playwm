@@ -36,8 +36,8 @@ END OF HEADER -->
       <name>f6</name>
       <name>g7</name>
     </names>
-    <!-- The number of milliseconds to show the popup for when switching
-       desktops.  Set this to 0 to disable the popup. -->
+    <!-- The number of milliseconds to show the pop up for when switching
+       desktops.  Set this to 0 to disable the pop up. -->
     <popupTime>875</popupTime>
   </desktops>
 
@@ -132,7 +132,7 @@ END OF HEADER -->
     <!-- move focus to a window when you move the mouse into it -->
     <followMouse>no</followMouse>
     <!-- focus the last used window when changing desktops, instead of the one
-       under the mouse pointer. when followMouse is enabled -->
+       under the mouse pointer. When followMouse is enabled -->
     <focusLast>yes</focusLast>
     <!-- move focus under the mouse, even when the mouse is not moving -->
     <underMouse>no</underMouse>
@@ -155,8 +155,8 @@ END OF HEADER -->
        on: 'Any' - any monitor, 'Mouse' - where the mouse is, 'Active' - where
        the active window is, 'Primary' - only on the primary monitor -->
     <monitor>Primary</monitor>
-    <!-- The monitor where Openbox should place popup dialogs such as the
-       focus cycling popup, or the desktop switch popup.  It can be an index
+    <!-- The monitor where Openbox should place pop up dialogs such as the
+       focus cycling pop up, or the desktop switch pop up.  It can be an index
        from 1, specifying a particular monitor.  Or it can be one of the
        following: 'Mouse' - where the mouse is, or
                   'Active' - where the active window is -->
@@ -193,7 +193,7 @@ END OF HEADER -->
   </margins>
 
 <!--   6) DOCK APPLICATIONS PLACEMENT -->
-  <!-- for dockapp applictions (http://dockapps.windowmaker.org/) -->
+  <!-- for dockapp applications (http://dockapps.windowmaker.org/) -->
   <dock>
     <!-- (Top|Bottom)(Left|Right|)|Top|Bottom|Left|Right|Floating -->
     <position>TopLeft</position>

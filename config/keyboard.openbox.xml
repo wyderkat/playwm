@@ -20,7 +20,7 @@
 END OF HEADER -->
 
 <!--   1) KEY COMBINATIONS
-  General key combination sytax is
+  General key combination syntax is
   Modifier-...-Key
   where Modifier can be one of these characters
     S     Shift key
@@ -104,6 +104,9 @@ END OF HEADER -->
   </keybind>
   <keybind key="S-W-k">
     <action name="SendToDesktop"> <to>right</to> <wrap>no</wrap> </action>
+  </keybind>
+  <keybind key="W-Escape">
+    <action name="GoToDesktop"> <to>last</to> </action>
   </keybind>
   <keybind key="W-F1">
     <action name="GoToDesktop"> <to>1</to> </action>

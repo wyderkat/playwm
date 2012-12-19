@@ -5,7 +5,7 @@
 #
 # This file don't have much documentation, because it is shorter version of
 #   task.bar.tint2rc
-# file. To find documentaiont, check out similar lines in above file.
+# file. To find documentation, check out similar lines in above file.
 #
 # Table of Contents:
 #   1) BACKGROUNDS TEMPLATES
@@ -45,12 +45,12 @@ wm_menu = 0
 panel_layer = top
 panel_background_id = 1
 panel_items = L
-strut_policy = minimum
+strut_policy = follow_size
 
 #   3) LAUNCHER CONFIGURATION
 #launcher_background_id = 2
 #launcher_icon_size = number : Set the launcher icon size to number.
-launcher_icon_asb = 100 -60 0
+launcher_icon_asb = 90 -40 0
 launcher_tooltip = 1
 launcher_icon_theme = Humanity
 launcher_padding = 5 0 7
@@ -61,7 +61,7 @@ task_tooltip = 1
 tooltip_padding = 2 2
 # time to activate tooltip
 tooltip_show_timeout = 0.7
-# time to desactivate tooltip
+# time to deactivate tooltip
 tooltip_hide_timeout = 0.3
 # NEXT
 tooltip_background_id = 2

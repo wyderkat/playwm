@@ -1,15 +1,17 @@
 Welcome everybody to PlayWM!
 
-PlayWM is a window manager which was intended to play with it's configuration.
+PlayWM is a window manager which was intended to play with its configuration.
 This way every curious user, not only advanced Linux geek, can change how looks
-and behaves his/her desktop and windows on it. 
+and behaves his/her desktop and windows on it. Also if you don't have time to
+read all documentation, PlayWM is fast startup. 
 
-How to play? After staring PlayWM first time, go to ~/.playwm directory and
-read START.txt file. Since you are reading it now, we can begin:)
+How to play? After staring PlayWM first time, go to .playwm directory in your
+home directory and read START.txt file. Since you are reading it now, we can
+begin:)
 
 In ~/.playwm directory you can find all configuration files for different
 components of PlayWM. PlayWM is like LEGO toys. It is build from different
-application joined in one place, and well documented. 
+application joined in one place and well documented. 
 
 To play with PlayWM you need to change those files, using documentations provided
 inside those files. It is possible because documentation is short and written
@@ -19,7 +21,8 @@ To avoid reading all documentation read just header (marked as a
   MUST TO READ - HEADER
 ) and follow instructions or table of contents provided there. 
 
-One file which you need to read from first line till the bottom is this file:
+One file which you need to read from first line till the bottom is this file
+which you are ridding now:
 ->  START.txt
 OK, lets start by making necessary notes about architecture of PlayWM.
 
@@ -32,7 +35,8 @@ If you want to change how looks and works that top panel go to
 ->  task.bar.tint2rc 
 file.
 
-The same Tint2 application runs on the right edge of screen. To configure go to
+The same Tint2 application is running on the right edge of screen. To configure
+go to
 ->  launch.bar.tint2rc
 
 What about that core of PlayWM - OpenBox? Here are most of options to change. 
@@ -40,7 +44,8 @@ If you want to change desktop wallpaper or add application to start when PlayWM
 starts go to:
 ->  autostart.openbox.sh
 
-If you want to change keybindings or mousebindings, to control your PlayWM, go to:
+If you want to change key bindings or mouse bindings, to control your PlayWM,
+go to:
 ->  keyboard.openbox.xml
 ->  mouse.openbox.xml
 file respectively.
@@ -50,28 +55,34 @@ To change menu go to
 
 In PlayWM you can automatize some window management. Go to file
 -> applications.openbox.xml
-to set up for example what desktop your mail client should pop up.
+to set up for example what desktop your mail client should pop up when started.
 
 
 For more advanced/internal part of window manager go to :
 ->  internal.openbox.xml
 
-Very important for PlayWM is terminal. By default we use Urxvt terminal. In
+Very important for PlayWM is terminal. By default PlayWM uses Urxvt terminal. In
 ->  terminal.Xresources
 you will find options to tune it.
 
-Probably most complicated is look/theme for Openbox application. Start from here:
+Probably most complicated is look/theme design for Openbox application. Start
+from here:
 -> theme/openbox-3/themerc
+Inside themerc/openbox-3 directory you can find also some image files, but go
+first to mentioned location.
 
 File
 -> fonts.conf 
-isn't only settings for PlayWM. It is related to all your fonts. But it is
-so important to have easy readable text that we decided to precofnigure this 
+isn't only settings for PlayWM. It is related to all your fonts in all window
+managers. But it is so important to have easy readable text that we decided to
+preconfigure this 
 for you too. 
 
-After changing any configuration file, type make in a ~/.playwm directory to
-refresh/restart components.  Make also backup copy of files you are changing for
-own safety. 
+After changing any configuration file, type 
+  make 
+command when being in a ~/.playwm directory. This will refresh/restart PlayWM
+components to new configuration. Make also backup copy of files you are
+changing for your own safety. 
 
 To view logs from running command go to
 ->  log/
