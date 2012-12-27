@@ -5,7 +5,12 @@ AUTOSTART="$DOT/autostart.openbox.sh"
 OPENBOX_CONF="$DOT/internal.openbox.xml"
 LOG="$DOT/log"
 THEMES="$HOME/.themes"
+THEME_PLAYWM="$HOME/.themes/PlayWM"
 FONTS_CONF_D="$HOME/.fonts.conf.d"
+FONTS_PLAYWM="$FONTS_CONF_D/playwm.fonts.conf"
+GTKRC2="$HOME/.gtkrc-2.0"
+GTKRC2_LINE="include \"$DOT/elements.gtkrc2\""
+GTKRC3="$HOME/.config/gtk-3.0/settings.ini"
 
 # Clean up after GDM
 #xprop -root -remove _NET_NUMBER_OF_DESKTOPS \
@@ -28,13 +33,39 @@ if [ ! -d "$FONTS_CONF_D" ];
 then
   mkdir "$FONTS_CONF_D"
 fi
+if [ ! -d "$FONTS_CONF_D" ];
+then
+  mkdir "$FONTS_CONF_D"
+fi
 
 update-playwm &> $LOG/update-playwm
 
 make -C "$DOT" markconfigured
 
-ln -sf "$DOT/theme" ~/.themes/PlayWM
-ln -sf "$DOT/fonts.conf" "$FONTS_CONF_D/playwm.fonts.conf"
+if [ ! -e $THEME_PLAYWM ]; then
+  ln -s $DOT/theme $THEME_PLAYWM
+fi
+
+if [ ! -e $FONTS_PLAYWM ]; then
+  ln -s $DOT/fonts.conf $FONTS_PLAYWM
+fi
+
+#if [ -f $GTKRC2 ]; then
+#  grep "$GTKRC2_LINE" $GTKRC2
+#  if [ "$?" != "0" ]; then
+#    echo "$GTKRC2_LINE" >> $GTKRC2
+#  fi
+#else
+#  echo "$GTKRC2_LINE" >> $GTKRC2
+#fi
+
+if [ ! -e $GTKRC2 ]; then
+  ln -s "$DOT/elements.gtkrc2" "$GTKRC2"
+fi
+
+if [ ! -e $GTKRC3 ]; then
+  ln -s "$DOT/elements.gtkrc3" "$GTKRC3"
+fi
 
 
 exec /usr/bin/openbox --startup "bash $AUTOSTART" --config-file "$OPENBOX_CONF" "$@" &> $LOG/openbox

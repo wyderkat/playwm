@@ -1,3 +1,15 @@
+playwm (1.1-1) precise; urgency=low
+
+  * Gtk themes.
+
+ -- Tomasz Wyderka <wyderkat@cofoh.com>  Thu, 20 Dec 2012 00:18:56 +0700
+
+playwm (1.0-1) precise; urgency=low
+
+  * Spellings errors in documentation.
+
+ -- Tomasz Wyderka <wyderkat@cofoh.com>  Wed, 19 Dec 2012 18:58:13 +0700
+
 playwm (0.7-1) precise; urgency=low
 
   * New theme look, small fixes.

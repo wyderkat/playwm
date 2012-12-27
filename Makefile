@@ -4,13 +4,13 @@
 # License: GPL-2
 ##
 
-VERSION=1.0
+VERSION=1.1
 VERSIONING=config/.versioning
 TARBALL=playwm_$(VERSION).orig.tar.gz
 PACKAGEDIR=playwm-$(VERSION)
 IMAGE=$(wildcard image/*)
 DEBIAN=$(wildcard debian/*)
-CONFIGS=applications.openbox.xml autostart.openbox.sh fonts.conf keyboard.openbox.xml launch.bar.tint2rc Makefile menu.openbox.xml mouse.openbox.xml START.txt task.bar.tint2rc terminal.Xresources theme internal.openbox.xml
+CONFIGS=applications.openbox.xml autostart.openbox.sh fonts.conf keyboard.openbox.xml launch.bar.tint2rc Makefile menu.openbox.xml mouse.openbox.xml START.txt task.bar.tint2rc terminal.Xresources theme internal.openbox.xml elements.gtkrc2 elements.gtkrc3
 CONFIGS_PRE=$(VERSIONING) $(addprefix config/,$(CONFIGS))
 ALL_CONFIGS=$(shell find config/ -type f )
 SRC=Makefile bin/playwm bin/update-playwm bin/identify_window bin/find_key_name $(IMAGE) xsession/playwm.desktop applications/urxvt.desktop $(CONFIGS_PRE) $(DEBIAN) README INSTALL COPYING
@@ -83,12 +83,12 @@ $(VERSIONING):
 
 
 clean:
-	@rm -rf $(PACKAGEDIR) playwm_*.orig.tar.gz playwm_*.debian.tar.gz playwm_*.dsc playwm_*.build playwm_*.changes playwm_*ppa.upload
+	@rm -rf $(PACKAGEDIR) playwm_*.orig.tar.gz playwm_*.debian.tar.gz playwm_*.dsc playwm_*.build playwm_*.changes playwm_*ppa.upload playwm_*.deb
 	
 
 # author testing environment
 
-MYCONFIGSPATCHES=autostart.openbox.sh launch.bar.tint2rc terminal.Xresources applications.openbox.xml
+MYCONFIGSPATCHES=autostart.openbox.sh launch.bar.tint2rc terminal.Xresources applications.openbox.xml elements.gtkrc2 elements.gtkrc3
 # update configs for development
 self:
 	@mkdir -p $(HOME)/.playwm

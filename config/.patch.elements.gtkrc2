@@ -1,0 +1,4 @@
+2c2
+< gtk-icon-theme-name="Humanity"
+---
+> gtk-icon-theme-name="Faience"
