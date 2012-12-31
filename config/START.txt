@@ -1,12 +1,13 @@
 Welcome everybody to PlayWM!
 
-PlayWM is a window manager which was intended to play with its configuration.
-This way every curious user, not only advanced Linux geek, can change how looks
-and behaves his/her desktop and windows on it. Also if you don't have time to
-read all documentation, PlayWM is fast startup. 
+PlayWM is a window manager which was created for playing with its
+configuration.  Every curious user, not only advanced Linux geek, can change
+how looks and behaves his/her desktop and windows on it. Also if you don't have
+time to read all documentation, PlayWM is fast way to start with fully
+configurable WM. 
 
-How to play? After staring PlayWM first time, go to .playwm directory in your
-home directory and read START.txt file. Since you are reading it now, we can
+How to play? After staring PlayWM first time go to .playwm directory in your
+home folder and read START.txt file. Since you are reading it now, we can
 begin:)
 
 In ~/.playwm directory you can find all configuration files for different
