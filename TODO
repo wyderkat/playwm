@@ -1,3 +1,10 @@
+* nie dziala z /usr/local
+* run dialog - 
+bashrun.sourceforge.net
+* polskie ikona w zegarze 
+
+* ikony information to INSTALL file
+
 *) terminal icon test @tung and oothers
   test gtk themes, czy Radiance zainstalowany
 
@@ -5,6 +12,11 @@
 
 *) Przeredakowac dokładnie. kazdego dnia jedna strone. Czasami czegoś brakuje.
    Powiazany punkt *) More funny!
+
+*) zapisac to jako plik z filozowfia, rozprowmowac na cofoh i youtube:
+
+PlayWM to tylko OpenBox, nawet bez zadnych zmian w kodzie. Tylko domyslnie openbox musi byc bardzo topornie konfigurowany na poczatku. Kazdy kto uzywa Openbox robi podobna konfiguracje a i tak nie wielu udaje sie osiagnac pelny wyglad. Wiec w PlayWM poczatkowa (ta toporna) konfiguracja jest zrobiona, i wszystkie inne opcje sa w jednym katalogu w komentarzach w plikach. To ma byc filozofia Linuxa wg mnie, wygladac i dzialac ladnie a nawet lepiej niz Widnows ale miec ciagle opcje zmieniania wszystkiego. Głupotą uważam żeby robić tysiac malych aplikacji z oknami dialogowymi do konfiguracja kazdego podelementu!! (jak jest windows, i gnome) Uzytkownicy linux nie sa glupi i potrafia zmienic plik tesktowy! :):)
+
 
 
 
