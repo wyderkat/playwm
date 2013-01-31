@@ -65,8 +65,8 @@ URxvt.colorUL: #4682B4
 *color3:  #eab93d
 *color11: #ffc123
 ! DarkBlue + Blue
-*color4:  #204a87
-*color12: #3465a4
+*color4:  #3B73BA
+*color12: #4585D9
 ! DarkMangenta + Mangenta
 *color5:  #ce5c00
 *color13: #f57900
