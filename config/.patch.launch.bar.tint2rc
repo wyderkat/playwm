@@ -6,8 +6,7 @@
 > launcher_item_app = /usr/share/applications/Thunar.desktop
 74a76
 > launcher_item_app = /usr/share/applications/evolution.desktop
-76,77c78,85
-< 
+76c78,86
 < 
 ---
 > launcher_item_app = /usr/share/applications/gvim.desktop
@@ -18,3 +17,4 @@
 > launcher_item_app = /usr/share/applications/google-earth.desktop
 > launcher_item_app = /usr/share/applications/chromium-browser.desktop
 > launcher_item_app = /usr/share/applications/dropbox.desktop
+> launcher_item_app = /usr/share/applications/libreoffice-startcenter.desktop
