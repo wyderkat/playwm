@@ -4,17 +4,18 @@
 > launcher_icon_theme = Faience
 73a74
 > launcher_item_app = /usr/share/applications/Thunar.desktop
-74a76
+74a76,77
 > launcher_item_app = /usr/share/applications/evolution.desktop
-76c78,86
+> launcher_item_app = /usr/share/applications/liferea.desktop
+76c79,87
 < 
 ---
 > launcher_item_app = /usr/share/applications/gvim.desktop
-> launcher_item_app = /usr/share/applications/teamviewer-teamviewer7.desktop
 > launcher_item_app = /usr/share/applications/decibel-audio-player.desktop
 > launcher_item_app = /usr/share/applications/skype.desktop
 > launcher_item_app = /usr/share/applications/inkscape.desktop
 > launcher_item_app = /usr/share/applications/google-earth.desktop
-> launcher_item_app = /usr/share/applications/chromium-browser.desktop
 > launcher_item_app = /usr/share/applications/dropbox.desktop
 > launcher_item_app = /usr/share/applications/libreoffice-startcenter.desktop
+> launcher_item_app = /usr/share/applications/streamtuner2.desktop 
+> launcher_item_app = /usr/share/applications/teamviewer-teamviewer7.desktop

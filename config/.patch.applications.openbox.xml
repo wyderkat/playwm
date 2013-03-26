@@ -1,4 +1,6 @@
-37a38,45
+34c34,47
+<   <application name="Download" title="Downloads">
+---
 >   <application name="evolution" type="normal" title="Mail - Evolution">
 >     <desktop>1</desktop>
 >     <position force="no">
@@ -6,4 +8,14 @@
 >       <y>0</y>
 >     </position>
 >     <maximized>Vertical</maximized>
+>   </application>
+> 
+>   <application name="Liferea">
+>     <desktop>1</desktop>
+>   </application>
+> 
+>   <application name="Streamtuner2">
+37a51,53
+>   <application name="Download" title="Downloads">
+>     <desktop>7</desktop>
 >   </application>
