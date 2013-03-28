@@ -10,7 +10,6 @@ INSTALLATION / BUILDING instructions:
     make install
 *) Install depending software: feh, xcompmgr, tint2, volumeicon-alsa, openbox, menu, rxvt-unicode, xfonts-terminus
    This step is system depending.
-
 *) Log out and select new menu entry in display manager login window, or call "playwm" in your startx file. 
  
  
